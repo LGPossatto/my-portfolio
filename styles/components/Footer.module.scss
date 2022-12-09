@@ -1,0 +1,81 @@
+@import "../../styles/_sass/colors";
+
+.container {
+  position: relative;
+  height: 240px;
+
+  .background {
+    display: block;
+
+    position: absolute;
+    bottom: 0;
+    left: -5vw;
+
+    width: calc(100% + 10vw);
+    height: 100%;
+
+    background-color: red;
+  }
+
+  .dec {
+    &-l-1,
+    &-l-2,
+    &-l-3,
+    &-r-1,
+    &-r-2,
+    &-r-3 {
+      display: block;
+      position: absolute;
+
+      background-color: $color-white;
+    }
+
+    &-l-1,
+    &-l-2,
+    &-l-3 {
+      left: -5vw;
+    }
+
+    &-r-1,
+    &-r-2,
+    &-r-3 {
+      right: -5vw;
+    }
+  }
+
+  .dec-l-1 {
+    top: 24px;
+    width: 10%;
+    height: 48px;
+  }
+
+  .dec-l-2 {
+    top: 120px;
+    width: 6%;
+    height: 24px;
+  }
+
+  .dec-l-3 {
+    bottom: 24px;
+    width: 8%;
+    height: 16px;
+  }
+
+  .dec-r-1 {
+    top: 26px;
+    width: 6%;
+    height: 22px;
+  }
+
+  .dec-r-2 {
+    top: 96px;
+    width: 10%;
+    height: 42px;
+  }
+
+  .dec-r-3 {
+    bottom: 36px;
+    width: 8%;
+    height: 28px;
+  }
+}

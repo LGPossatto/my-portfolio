@@ -1,0 +1,46 @@
+@import "../_sass/sizes";
+@import "../_sass/colors";
+
+.container {
+  margin: 80px 0;
+
+  h2 {
+    margin-bottom: 40px;
+
+    font-size: $fs-bigger;
+    font-weight: 700;
+  }
+
+  .projects {
+    .tabs {
+      display: flex;
+
+      .fav,
+      .rest {
+        cursor: pointer;
+
+        position: relative;
+
+        width: 100%;
+        padding: 12px;
+        margin: 16px;
+
+        text-align: center;
+        font-size: $fs-big;
+
+        background-color: red;
+
+        span {
+          position: absolute;
+          bottom: 0;
+          left: 10%;
+
+          width: 80%;
+          height: 6px;
+
+          background: $color-black;
+        }
+      }
+    }
+  }
+}
