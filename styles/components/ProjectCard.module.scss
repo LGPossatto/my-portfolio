@@ -1,0 +1,23 @@
+@import "../_sass/sizes";
+@import "../_sass/colors";
+
+.container {
+  max-width: 500px;
+  padding: 24px;
+  margin-bottom: 24px;
+
+  border-radius: 8px;
+  background-color: red;
+
+  h3 {
+    margin-bottom: 16px;
+
+    font-size: $fs-big;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: $fs-med;
+    font-weight: 500;
+  }
+}

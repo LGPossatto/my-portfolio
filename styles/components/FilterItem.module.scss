@@ -1,0 +1,16 @@
+@import "../_sass/sizes";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 8px;
+
+  background-color: red;
+
+  p {
+    font-size: $fs-small;
+  }
+}

@@ -1,4 +1,7 @@
 import styles from "../styles/components/Projects.module.scss";
+import { ProjectsFav } from "./ProjectsFav";
+import { ProjectsFilter } from "./ProjectsFilter";
+import { ProjectsList } from "./ProjectsList";
 
 export const Projects = () => {
   return (
@@ -12,6 +15,11 @@ export const Projects = () => {
           <div className={styles.rest}>
             Tudo<span></span>
           </div>
+        </div>
+        <div className={styles.list}>
+          <ProjectsFilter></ProjectsFilter>
+          {/* <ProjectsFav></ProjectsFav> */}
+          <ProjectsList></ProjectsList>
         </div>
       </section>
     </section>
