@@ -5,8 +5,8 @@ export const Header = () => {
     <header className={styles.container}>
       <div className={styles["flex-container"]}>
         <div className={styles.title}>
-          <h1>Name Name na Me</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <h1>Luiz Gustavo Possatto</h1>
+          <p>Engenheiro Eletricista e Programador.</p>
         </div>
         <div className={styles["img-box"]}></div>
       </div>

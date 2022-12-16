@@ -1,8 +1,11 @@
 @import "../../styles/_sass/colors";
+@import "../../styles/_sass/sizes";
 
 .container {
   position: relative;
   height: 240px;
+
+  color: $color-white;
 
   .background {
     display: block;
@@ -14,7 +17,7 @@
     width: calc(100% + 10vw);
     height: 100%;
 
-    background-color: red;
+    background-image: linear-gradient(to right, $color-black, $color-grey-dark);
   }
 
   .dec {
@@ -45,37 +48,37 @@
 
   .dec-l-1 {
     top: 24px;
-    width: 10%;
+    width: 5%;
     height: 48px;
   }
 
   .dec-l-2 {
     top: 120px;
-    width: 6%;
+    width: 3%;
     height: 24px;
   }
 
   .dec-l-3 {
     bottom: 24px;
-    width: 8%;
+    width: 4%;
     height: 16px;
   }
 
   .dec-r-1 {
     top: 26px;
-    width: 6%;
+    width: 3%;
     height: 22px;
   }
 
   .dec-r-2 {
     top: 96px;
-    width: 10%;
+    width: 5%;
     height: 42px;
   }
 
   .dec-r-3 {
     bottom: 36px;
-    width: 8%;
+    width: 4%;
     height: 28px;
   }
 }
