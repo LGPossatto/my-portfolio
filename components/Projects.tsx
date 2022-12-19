@@ -1,4 +1,7 @@
 import styles from "../styles/components/Projects.module.scss";
+import { DoubleText } from "./DoubleText";
+import { Line } from "./Line";
+import { LineBtn } from "./LineBtn";
 import { ProjectsFav } from "./ProjectsFav";
 import { ProjectsFilter } from "./ProjectsFilter";
 import { ProjectsList } from "./ProjectsList";
@@ -9,12 +12,17 @@ export const Projects = () => {
       <h2>Projects</h2>
       <section className={styles.projects}>
         <div className={styles.tabs}>
-          <div className={styles.fav}>
-            Destaques<span></span>
-          </div>
-          <div className={styles.rest}>
-            Tudo<span></span>
-          </div>
+          <LineBtn
+            text="Destaques"
+            onClick={() => console.log("destaques")}
+            active
+            width="fill"
+          ></LineBtn>
+          <LineBtn
+            text="Tudo"
+            onClick={() => console.log("tudo")}
+            width="fill"
+          ></LineBtn>
         </div>
         <div className={styles.list}>
           <ProjectsFilter></ProjectsFilter>

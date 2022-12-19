@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { getRandomColor } from "../utils/getRandomColor";
 import Logo from "../assets/icons/logo.svg";
 
-import { Drawer } from "./Drawer";
 import styles from "../styles/components/Nav.module.scss";
+import { Drawer } from "./Drawer";
+import { DoubleText } from "./DoubleText";
 
 export const Nav = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -17,22 +17,28 @@ export const Nav = () => {
     console.log(path);
   };
 
+  const getMenuList = () => {
+    return (
+      <>
+        <li onClick={() => goTo("/projetos")}>
+          <DoubleText text="Projetos"></DoubleText>
+        </li>
+        <li onClick={() => goTo("/sobre-mim")}>
+          <DoubleText text="Sobre"></DoubleText>
+        </li>
+        <li onClick={() => goTo("/contato")}>
+          <DoubleText text="Contato"></DoubleText>
+        </li>
+      </>
+    );
+  };
+
   return (
     <nav className={styles.container}>
       <div className={styles.title}>
         <Logo />
       </div>
-      <ul>
-        <li onClick={() => goTo("/projetos")}>
-          Projetos<span style={{ color: getRandomColor() }}>Projetos</span>
-        </li>
-        <li onClick={() => goTo("/sobre-mim")}>
-          Sobre Mim<span style={{ color: getRandomColor() }}>Sobre Mim</span>
-        </li>
-        <li onClick={() => goTo("/contato")}>
-          Contato<span style={{ color: getRandomColor() }}>Contato</span>
-        </li>
-      </ul>
+      <ul>{getMenuList()}</ul>
       <div className={styles.burg} onClick={openCloseDrawer}>
         <span></span>
         <span></span>
@@ -43,17 +49,7 @@ export const Nav = () => {
         openCloseDrawer={openCloseDrawer}
         drawerActive={menuActive}
       >
-        <ul className={styles["burg-list"]}>
-          <li onClick={() => goTo("/projetos")}>
-            Projetos<span style={{ color: getRandomColor() }}>Projetos</span>
-          </li>
-          <li onClick={() => goTo("/sobre-mim")}>
-            Sobre Mim<span style={{ color: getRandomColor() }}>Sobre Mim</span>
-          </li>
-          <li onClick={() => goTo("/contato")}>
-            Contato<span style={{ color: getRandomColor() }}>Contato</span>
-          </li>
-        </ul>
+        <ul className={styles["burg-list"]}>{getMenuList()}</ul>
       </Drawer>
     </nav>
   );

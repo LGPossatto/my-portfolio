@@ -1,5 +1,5 @@
-import CloseIcon from "../assets/icons/xmark-solid.svg";
 import styles from "../styles/components/Drawer.module.scss";
+import CloseIcon from "../assets/icons/xmark-solid.svg";
 
 interface props {
   drawerActive: boolean;

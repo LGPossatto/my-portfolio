@@ -14,32 +14,15 @@
   .projects {
     .tabs {
       display: flex;
+      margin: 24px 0;
 
       .fav,
       .rest {
-        cursor: pointer;
-
         position: relative;
 
         width: 100%;
-        padding: 12px;
+        padding: 8px;
         margin: 18px 18px 36px;
-
-        text-align: center;
-        font-size: $fs-big;
-
-        background-color: red;
-
-        span {
-          position: absolute;
-          bottom: 0;
-          left: 10%;
-
-          width: 80%;
-          height: 6px;
-
-          background: $color-black;
-        }
       }
     }
 

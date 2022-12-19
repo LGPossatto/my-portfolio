@@ -1,5 +1,5 @@
-import { getRandomColor } from "../utils/getRandomColor";
 import styles from "../styles/components/Line.module.scss";
+import { getRandomColor } from "../utils/getRandomColor";
 
 export const Line = () => {
   return (
