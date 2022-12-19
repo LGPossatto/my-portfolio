@@ -5,10 +5,12 @@
 .container {
   .about {
     position: relative;
-    padding: 48px 0 60px;
-    margin: 96px 0;
 
-    text-align: justify;
+    width: 720px;
+    padding: 48px 48px 60px;
+    margin: 96px auto;
+
+    text-align: center;
 
     color: $color-white;
 
@@ -32,8 +34,8 @@
       z-index: -1;
       top: 0;
       bottom: 0;
-      left: -42px;
-      right: -42px;
+      left: -5%;
+      right: -5%;
 
       transform: skewX(-16deg);
 
@@ -46,6 +48,16 @@
       @include bp-tablet {
         transform: skewX(0deg);
       }
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 680px;
+    }
+
+    @include bp-tablet {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }

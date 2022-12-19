@@ -1,10 +1,11 @@
 @import "../_sass/colors";
+@import "../_sass/breakpoints";
 
 .container {
   position: relative;
-  left: -5vw;
+  left: -60px;
 
-  width: calc(100% + 10vw);
+  width: calc(100% + 120px);
   height: 6px;
 
   .top {
@@ -29,5 +30,10 @@
 
     height: 100%;
     width: 100%;
+  }
+
+  @include bp-med {
+    width: calc(100% + 10vw);
+    left: -5vw;
   }
 }
