@@ -1,6 +1,7 @@
 @import "../../styles/_sass/colors";
 @import "../../styles/_sass/sizes";
 @import "../../styles/_sass/breakpoints";
+@import "../../styles/_sass/mixins";
 
 .container {
   position: relative;
@@ -70,7 +71,7 @@
     width: calc(100% + 120px);
     height: 100%;
 
-    background-image: linear-gradient(to right, $color-black, $color-grey-dark);
+    @include backgroundGradient();
 
     @include bp-med {
       width: calc(100% + 10vw);

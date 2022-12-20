@@ -1,33 +1,36 @@
+import { useState } from "react";
+
 import styles from "../styles/components/Projects.module.scss";
-import { DoubleText } from "./DoubleText";
-import { Line } from "./Line";
 import { LineBtn } from "./LineBtn";
-import { ProjectsFav } from "./ProjectsFav";
 import { ProjectsFilter } from "./ProjectsFilter";
+import { ProjectsFav } from "./ProjectsFav";
 import { ProjectsList } from "./ProjectsList";
 
 export const Projects = () => {
+  const [isFav, setIsFav] = useState(true);
+
   return (
     <section className={styles.container}>
-      <h2>Projects</h2>
+      <h2>Projetos</h2>
       <section className={styles.projects}>
         <div className={styles.tabs}>
           <LineBtn
             text="Destaques"
-            onClick={() => console.log("destaques")}
-            active
+            onClick={() => setIsFav(true)}
+            active={isFav}
             width="fill"
           ></LineBtn>
           <LineBtn
             text="Tudo"
-            onClick={() => console.log("tudo")}
+            onClick={() => setIsFav(false)}
+            active={!isFav}
             width="fill"
           ></LineBtn>
         </div>
         <div className={styles.list}>
           <ProjectsFilter></ProjectsFilter>
-          {/* <ProjectsFav></ProjectsFav> */}
-          <ProjectsList></ProjectsList>
+
+          {isFav ? <ProjectsFav></ProjectsFav> : <ProjectsList></ProjectsList>}
         </div>
       </section>
     </section>

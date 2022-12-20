@@ -1,6 +1,9 @@
 @import "../_sass/sizes";
+@import "../_sass/colors";
 
 .container {
+  cursor: pointer;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,9 +11,26 @@
   width: 100%;
   padding: 8px;
 
-  background-color: red;
+  background-color: $color-white;
 
-  p {
-    font-size: $fs-small;
+  &:active {
+    opacity: 0.95;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin: 0 6px;
+
+      font-size: $fs-small;
+      font-weight: 600;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
   }
 }

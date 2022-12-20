@@ -1,6 +1,7 @@
 @import "../../styles/_sass/sizes";
 @import "../../styles/_sass/colors";
 @import "../../styles/_sass/breakpoints";
+@import "../../styles/_sass/mixins";
 
 .container {
   .about {
@@ -39,11 +40,7 @@
 
       transform: skewX(-16deg);
 
-      background-image: linear-gradient(
-        to right,
-        $color-black,
-        $color-grey-dark
-      );
+      @include backgroundGradient();
 
       @include bp-tablet {
         transform: skewX(0deg);

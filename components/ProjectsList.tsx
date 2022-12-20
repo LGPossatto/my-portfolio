@@ -1,40 +1,30 @@
 import styles from "../styles/components/ProjectsList.module.scss";
+import { ProjectItem } from "./ProjectItem";
 
 export const ProjectsList = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.card}>
-        <h3>
-          Name name name Name name name Name Name name name Name Name name name
-          Name Name name name Name name name
-        </h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+      <ProjectItem
+        title="Name name name Name"
+        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
           dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
           amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit.
-        </p>
-        <span className="date">12/07/2007</span>
-      </div>
-      <div className={styles.card}>
-        <h3>Name name name</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+          consectetur adipisicing elit."
+        date="12/07/2007"
+      ></ProjectItem>
+      <ProjectItem
+        title="Name name name Name"
+        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
           dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit
           amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing
-          elit.
-        </p>
-        <span className="date">12/07/2007</span>
-      </div>
-      <div className={styles.card}>
-        <h3>Name name name</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        <span className="date">12/07/2007</span>
-      </div>
+          consectetur adipisicing elit."
+        date="12/07/2007"
+      ></ProjectItem>
+      <ProjectItem
+        title="Name name"
+        desc="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        date="12/07/2007"
+      ></ProjectItem>
     </div>
   );
 };

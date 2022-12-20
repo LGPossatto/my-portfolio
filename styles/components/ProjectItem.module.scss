@@ -1,0 +1,57 @@
+@import "../_sass/colors";
+@import "../_sass/sizes";
+@import "../_sass/breakpoints";
+
+.container {
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 8px;
+
+  padding: 12px 0;
+  border-bottom: 4px solid $color-black;
+
+  &:hover {
+    h3,
+    p,
+    span {
+      opacity: 0.8;
+    }
+  }
+
+  h3,
+  p,
+  span {
+    margin: auto 0;
+  }
+
+  h3,
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+
+  p,
+  span {
+    font-size: $fs-med;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: $fs-med;
+    font-weight: 700;
+  }
+
+  p {
+    grid-column: span 2;
+    grid-row: 2;
+  }
+
+  span {
+    text-align: right;
+  }
+}

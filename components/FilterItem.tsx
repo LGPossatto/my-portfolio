@@ -1,15 +1,21 @@
+import { useState } from "react";
+import Icon from "../assets/icons/javascript.svg";
+
 import styles from "../styles/components/FilterItem.module.scss";
 import { Checkbox } from "./Checkbox";
 
-interface props {
-  active?: boolean;
-}
+interface props {}
 
-export const FilterItem = ({ active = false }: props) => {
+export const FilterItem = ({}: props) => {
+  const [active, setActive] = useState(false);
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} onClick={() => setActive(!active)}>
       <Checkbox active={active}></Checkbox>
-      <p>FilterItem</p>
+      <div className={styles.info}>
+        <p>FilterItem</p>
+        <Icon></Icon>
+      </div>
     </div>
   );
 };
