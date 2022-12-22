@@ -4,13 +4,14 @@ import { getRandomColor } from "../utils/getRandomColor";
 interface props {
   text: string;
   active?: boolean;
+  color?: string;
 }
 
-export const DoubleText = ({ text, active = false }: props) => {
+export const DoubleText = ({ text, color, active = false }: props) => {
   return (
     <div className={`${styles.container} ${active ? styles.active : ""}`}>
       {text}
-      <span style={{ color: getRandomColor() }}>{text}</span>
+      <span style={{ color: color ? color : getRandomColor() }}>{text}</span>
     </div>
   );
 };
