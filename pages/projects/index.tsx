@@ -1,10 +1,15 @@
+import { useState } from "react";
+
 import styles from "../../styles/pages/Projects.module.scss";
 import { Line } from "../../components/Line";
 import { Nav } from "../../components/Nav";
 import { Footer } from "../../components/Footer";
 import { CtaBtn } from "../../components/CtaBtn";
+import { Carousel } from "../../components/Carousel";
 
 export default function Projects() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <div className={styles.container}>
       <Nav></Nav>
@@ -37,7 +42,10 @@ export default function Projects() {
             ab vero eaque? Aliquid, corporis?
           </p>
         </div>
-        <div className={styles.carousel}></div>
+        <Carousel
+          activeIndex={activeIndex}
+          setActiveIndex={setActiveIndex}
+        ></Carousel>
         <div className={styles.btn}>
           <CtaBtn
             text="Voltar aos projetos"
