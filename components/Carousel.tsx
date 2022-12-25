@@ -1,27 +1,25 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import useWindowDimensions from "../custom-hooks/useWindowDimensions ";
 
 import { getRandomColor } from "../utils/getRandomColor";
 
-import img from "../assets/images/placeholder.jpg";
 import styles from "../styles/components/Carousel.module.scss";
 import { ArrowBtn } from "./ArrowBtn";
 
 interface props {
   activeIndex: number;
   setActiveIndex: Dispatch<SetStateAction<number>>;
+  imgList: StaticImageData[];
 }
 
-export const Carousel = ({ activeIndex, setActiveIndex }: props) => {
+export const Carousel = ({ activeIndex, setActiveIndex, imgList }: props) => {
   const { width } = useWindowDimensions();
   const [imgIndex, setImgIndex] = useState(0);
   const [listEndIndex, setListEndIndex] = useState(0);
   const [stepSize, setStepSize] = useState(26.7);
   const [color, setColor] = useState("#202020");
-
-  const imgList = [img, img, img, img, img, img, img, img, img, img];
 
   const leftClick = () => {
     if (imgIndex > 0) {

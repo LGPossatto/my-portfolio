@@ -1,11 +1,65 @@
 import { useState } from "react";
 
+import img1 from "../../assets/images/placeholder.jpg";
+import img2 from "../../assets/images/img-1.jpg";
+import img3 from "../../assets/images/img-2.jpg";
+
 import styles from "../../styles/pages/Projects.module.scss";
 import { Line } from "../../components/Line";
 import { Nav } from "../../components/Nav";
 import { Footer } from "../../components/Footer";
 import { CtaBtn } from "../../components/CtaBtn";
 import { Carousel } from "../../components/Carousel";
+import { ImgDisplay } from "../../components/ImgDisplay";
+
+const imgObjects = [
+  {
+    img: img1,
+    title: "ABC",
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda eligendi inventore, voluptatum accusamus ea molestiae provident eius. Animi perspiciatis quos omnis placeat! Hic pariatur, delectus laboriosam quaerat odit ipsam tempore!",
+  },
+  {
+    img: img2,
+    title: "123",
+    desc: "Quis perferendis quia enim! Corporis ipsam ipsa corrupti recusandae eos incidunt, dignissimos, quod labore quis, doloremque velit beatae pariatur. Exercitationem magnam magni ipsum sit, obcaecati delectus dignissimos suscipit aut laboriosam!",
+  },
+  {
+    img: img3,
+    title: "!@#",
+    desc: "Quos modi provident dolores atque dicta est obcaecati nobis repudiandae voluptatibus repellat. Quae ipsa facere similique delectus, doloribus dolorem accusantium cumque minima incidunt et distinctio recusandae veniam! Eius, molestiae pariatur.",
+  },
+  {
+    img: img1,
+    title: "ABC",
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda eligendi inventore, voluptatum accusamus ea molestiae provident eius. Animi perspiciatis quos omnis placeat! Hic pariatur, delectus laboriosam quaerat odit ipsam tempore!",
+  },
+  {
+    img: img2,
+    title: "123",
+    desc: "Quis perferendis quia enim! Corporis ipsam ipsa corrupti recusandae eos incidunt, dignissimos, quod labore quis, doloremque velit beatae pariatur. Exercitationem magnam magni ipsum sit, obcaecati delectus dignissimos suscipit aut laboriosam!",
+  },
+  {
+    img: img3,
+    title: "!@#",
+    desc: "Quos modi provident dolores atque dicta est obcaecati nobis repudiandae voluptatibus repellat. Quae ipsa facere similique delectus, doloribus dolorem accusantium cumque minima incidunt et distinctio recusandae veniam! Eius, molestiae pariatur.",
+  },
+  {
+    img: img1,
+    title: "ABC",
+    desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda eligendi inventore, voluptatum accusamus ea molestiae provident eius. Animi perspiciatis quos omnis placeat! Hic pariatur, delectus laboriosam quaerat odit ipsam tempore!",
+  },
+  {
+    img: img2,
+    title: "123",
+    desc: "Quis perferendis quia enim! Corporis ipsam ipsa corrupti recusandae eos incidunt, dignissimos, quod labore quis, doloremque velit beatae pariatur. Exercitationem magnam magni ipsum sit, obcaecati delectus dignissimos suscipit aut laboriosam!",
+  },
+  {
+    img: img3,
+    title: "!@#",
+    desc: "Quos modi provident dolores atque dicta est obcaecati nobis repudiandae voluptatibus repellat. Quae ipsa facere similique delectus, doloribus dolorem accusantium cumque minima incidunt et distinctio recusandae veniam! Eius, molestiae pariatur.",
+  },
+];
+const imgList = [img1, img2, img3, img1, img2, img3, img1, img2, img3];
 
 export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -42,7 +96,12 @@ export default function Projects() {
             ab vero eaque? Aliquid, corporis?
           </p>
         </div>
+        <ImgDisplay
+          activeIndex={activeIndex}
+          imgObjects={imgObjects}
+        ></ImgDisplay>
         <Carousel
+          imgList={imgList}
           activeIndex={activeIndex}
           setActiveIndex={setActiveIndex}
         ></Carousel>
