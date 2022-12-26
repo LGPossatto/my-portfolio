@@ -32,16 +32,20 @@ export const ImgDisplay = ({ activeIndex, imgObjects }: props) => {
 
   return (
     <div className={styles.container}>
-      <div
-        className={styles["flip-card"]}
-        style={{ transform: `rotateY(${flipDeg}deg)` }}
-      >
-        <span className={styles["card-front"]}>
-          <Image src={imgFront} alt="img1" />
-        </span>
-        <span className={styles["card-back"]}>
-          <Image src={imgBack} alt="img2" />
-        </span>
+      <div className={styles["aspect-ratio"]}>
+        <div className={styles.inside}>
+          <div
+            className={styles["flip-card"]}
+            style={{ transform: `rotateY(${flipDeg}deg)` }}
+          >
+            <span className={styles["card-front"]}>
+              <Image src={imgFront} alt="img1" />
+            </span>
+            <span className={styles["card-back"]}>
+              <Image src={imgBack} alt="img2" />
+            </span>
+          </div>
+        </div>
       </div>
       <div className={`${styles.text} ${isFrontUp ? styles.opacityUp : ""}`}>
         <h3>{imgObjects[activeIndex].title}</h3>
