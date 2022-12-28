@@ -13,6 +13,7 @@ export default function Home() {
       <Header></Header>
       <Line></Line>
       <Projects></Projects>
+      <Line></Line>
       <section className={styles.about}>
         <span></span>
         <h2>About</h2>

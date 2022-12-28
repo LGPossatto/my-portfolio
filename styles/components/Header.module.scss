@@ -3,8 +3,17 @@
 
 .container {
   .flex-container {
+    overflow: hidden;
+
     display: flex;
     align-items: center;
+
+    max-height: 380px;
+    min-height: 312px;
+    height: 60vh;
+    width: 100%;
+
+    padding: 24px 0;
   }
 
   .title {
@@ -22,10 +31,27 @@
   }
 
   .img-box {
-    max-height: 480px;
-    min-height: 360px;
-    height: 60vh;
     width: 100%;
-    background-color: red;
+    height: 100%;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include bp-tablet {
+    .flex-container {
+      flex-direction: column-reverse;
+      text-align: center;
+
+      max-height: none;
+      min-height: none;
+      height: auto;
+    }
+
+    .img-box {
+      max-height: 300px;
+    }
   }
 }

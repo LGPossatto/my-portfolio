@@ -1,3 +1,5 @@
+import Illustration from "../assets/illustrations/software-developer.svg";
+
 import styles from "../styles/components/Header.module.scss";
 
 export const Header = () => {
@@ -8,7 +10,9 @@ export const Header = () => {
           <h1>Luiz Gustavo Possatto</h1>
           <p>Engenheiro Eletricista e Programador.</p>
         </div>
-        <div className={styles["img-box"]}></div>
+        <div className={styles["img-box"]}>
+          <Illustration></Illustration>
+        </div>
       </div>
     </header>
   );
