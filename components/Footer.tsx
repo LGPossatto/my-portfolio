@@ -31,7 +31,7 @@ export const Footer = () => {
         </section>
         <section className={styles.qr}></section>
         <section className={styles.thanks}>
-          <h6>{'"Obrigado por acessar meu portfólio"'}</h6>
+          <h6>{"“Obrigado por acessar meu portfólio“"}</h6>
         </section>
       </div>
     </footer>
