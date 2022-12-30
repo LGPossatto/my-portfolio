@@ -27,21 +27,18 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+    font-weight: 700;
   }
 
   h3 {
     margin-bottom: 12px;
 
     font-size: $fs-med;
-    font-weight: 700;
-
     -webkit-line-clamp: 1;
   }
 
   p {
     font-size: $fs-small;
-    font-weight: 500;
-
     -webkit-line-clamp: 2;
   }
 }

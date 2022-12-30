@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 
 import useWindowDimensions from "../custom-hooks/useWindowDimensions ";
 
-import { getRandomColor } from "../utils/getRandomColor";
+import { Colors } from "../utils/Colors";
 
 import styles from "../styles/components/Carousel.module.scss";
 import { ArrowBtn } from "./ArrowBtn";
@@ -34,7 +34,7 @@ export const Carousel = ({ activeIndex, setActiveIndex, imgList }: props) => {
   };
 
   useEffect(() => {
-    setColor(getRandomColor());
+    setColor(Colors.getRandomColor());
   }, []);
 
   useEffect(() => {

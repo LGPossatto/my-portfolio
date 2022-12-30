@@ -1,29 +1,28 @@
+import Link from "next/link";
 import styles from "../styles/components/ProjectCard.module.scss";
+import { Colors } from "../utils/Colors";
 
 interface props {
-  colorNum?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+  id: string;
+  title: string;
+  desc: string;
+  colorNum?: number;
 }
 
-export const ProjectCard = ({ colorNum = 0 }: props) => {
-  const gradientList = [
-    "#1400ff, #00cfff",
-    "#29f000, #00e5f0",
-    "#8000ff, #ff009b",
-    "#f01700, #ea00d0",
-    "#2323d5, #9216ca",
-    "#f00044, #ffef00",
-    "#00cc6c, #ece800",
-  ];
-
+export const ProjectCard = ({ title, desc, id, colorNum = 0 }: props) => {
   return (
     <div
       className={styles.container}
       style={{
-        backgroundImage: `linear-gradient(to top right, ${gradientList[colorNum]})`,
+        backgroundImage: `linear-gradient(to top right, ${Colors.getGradient(
+          colorNum
+        )})`,
       }}
     >
-      <h3>Name name name</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <Link href={`/projetos/${id}`}>
+        <h3>{title}</h3>
+        <p>{desc}</p>
+      </Link>
     </div>
   );
 };

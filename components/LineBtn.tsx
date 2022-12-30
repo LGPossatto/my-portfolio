@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getRandomColor } from "../utils/getRandomColor";
+import { Colors } from "../utils/Colors";
 
 import styles from "../styles/components/LineBtn.module.scss";
 
@@ -8,6 +8,7 @@ interface props {
   active?: boolean;
   onClick: () => void;
   width?: "auto" | "fill";
+  colorTemp?: "hot" | "cold" | undefined;
 }
 
 export const LineBtn = ({
@@ -15,11 +16,12 @@ export const LineBtn = ({
   onClick,
   active = false,
   width = "auto",
+  colorTemp = undefined,
 }: props) => {
   const [color, setColor] = useState("#fafafa");
 
   useEffect(() => {
-    setColor(getRandomColor());
+    setColor(Colors.getRandomColor(colorTemp));
   }, []);
 
   return (

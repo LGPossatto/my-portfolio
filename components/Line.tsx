@@ -1,13 +1,17 @@
 import styles from "../styles/components/Line.module.scss";
-import { getRandomColor } from "../utils/getRandomColor";
+import { Colors } from "../utils/Colors";
 
-export const Line = () => {
+interface props {
+  colorTemp?: "hot" | "cold" | undefined;
+}
+
+export const Line = ({ colorTemp = undefined }: props) => {
   return (
     <div className={styles.container}>
       <span className={styles.top}></span>
       <span
         className={styles.bot}
-        style={{ backgroundColor: getRandomColor() }}
+        style={{ backgroundColor: Colors.getRandomColor(colorTemp) }}
       ></span>
     </div>
   );

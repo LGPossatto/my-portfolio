@@ -9,6 +9,7 @@
 
     .top-left {
       width: 70%;
+      min-height: 320px;
       height: fit-content;
       padding-right: 4%;
 
@@ -30,6 +31,7 @@
 
         p {
           font-size: $fs-med;
+          margin-bottom: 12px;
         }
       }
     }

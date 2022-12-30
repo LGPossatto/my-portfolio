@@ -1,19 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-import img1 from "../../assets/images/img-1.jpg";
-import img2 from "../../assets/images/img-2.jpg";
-import img3 from "../../assets/images/img-3.jpg";
-import img4 from "../../assets/images/img-4.jpg";
-import img5 from "../../assets/images/img-5.jpg";
+import { IProjectsData, projectsData } from "../../../data/projects";
+import img1 from "../../../assets/images/img-1.jpg";
+import img2 from "../../../assets/images/img-2.jpg";
+import img3 from "../../../assets/images/img-3.jpg";
+import img4 from "../../../assets/images/img-4.jpg";
+import img5 from "../../../assets/images/img-5.jpg";
 
-import styles from "../../styles/pages/Projects.module.scss";
-import { Line } from "../../components/Line";
-import { Nav } from "../../components/Nav";
-import { Footer } from "../../components/Footer";
-import { CtaBtn } from "../../components/CtaBtn";
-import { Carousel } from "../../components/Carousel";
-import { ImgDisplay } from "../../components/ImgDisplay";
-import { ProjectCard } from "../../components/ProjectCard";
+import styles from "../../../styles/pages/Projects.module.scss";
+import { Line } from "../../../components/Line";
+import { Nav } from "../../../components/Nav";
+import { Footer } from "../../../components/Footer";
+import { CtaBtn } from "../../../components/CtaBtn";
+import { Carousel } from "../../../components/Carousel";
+import { ImgDisplay } from "../../../components/ImgDisplay";
+import { ProjectCard } from "../../../components/ProjectCard";
 
 const imgObjects = [
   {
@@ -65,7 +67,18 @@ const imgObjects = [
 const imgList = [img1, img2, img3, img4, img5, img1, img2, img3, img4];
 
 export default function Projects() {
+  const [project, setProject] = useState<IProjectsData | undefined>(undefined);
   const [activeIndex, setActiveIndex] = useState(0);
+  const router = useRouter();
+  const { pid } = router.query;
+
+  const getProject = (id: string) => {
+    return projectsData.find((project) => project.id === id);
+  };
+
+  useEffect(() => {
+    setProject(getProject(pid as string));
+  }, [pid]);
 
   return (
     <div className={styles.container}>
@@ -74,34 +87,23 @@ export default function Projects() {
       <section className={styles.project}>
         <div className={styles["page-top"]}>
           <div className={styles["top-left"]}>
-            <h1>Name na Mename</h1>
+            <h1>{project?.title}</h1>
             <div className={styles.info}>
               <span>
-                <strong>Tecnologias:</strong> Tech 1, Tech 2, Tech 3, Tech 4,
-                Tech 5
+                <strong>Tecnologias:</strong> {project?.techList.join(", ")}
               </span>
               <span>
-                <strong>Stack:</strong> FullStack
+                <strong>Stack:</strong> {project?.stack}
               </span>
               <span>
-                <strong>Data:</strong> 05/08/2020
+                <strong>Data:</strong> {project?.date}
               </span>
             </div>
             <div className={styles.desc}>
               <h2>Sobre o projeto</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Inventore ex odio provident nemo magnam, molestiae quod, ut quos
-                nisi nulla libero quae rerum. Eos ipsum ullam consequuntur,
-                dignissimos dicta magni. Illo nulla quasi, esse quae corporis,
-                totam sit error laborum saepe earum veniam repellat voluptates
-                voluptatum a. Quia dolores alias molestiae quasi totam rem
-                deleniti, saepe aut perferendis accusantium doloribus! Error,
-                optio deserunt? Modi eos fugiat voluptatem possimus aliquid unde
-                in beatae earum aliquam, illo voluptas aperiam. Corrupti tenetur
-                quas aut saepe sequi delectus rem ab vero eaque? Aliquid,
-                corporis?
-              </p>
+              {project?.textList.map((text) => (
+                <p>{text}</p>
+              ))}
             </div>
           </div>
           <div className={styles["top-right"]}>
@@ -109,13 +111,15 @@ export default function Projects() {
               Destaques<span>A</span>
             </h4>
             <div>
-              <ProjectCard colorNum={0}></ProjectCard>
-              <ProjectCard colorNum={1}></ProjectCard>
-              <ProjectCard colorNum={2}></ProjectCard>
-              <ProjectCard colorNum={3}></ProjectCard>
-              <ProjectCard colorNum={4}></ProjectCard>
-              <ProjectCard colorNum={5}></ProjectCard>
-              <ProjectCard colorNum={6}></ProjectCard>
+              {projectsData.map((project, i) => (
+                <ProjectCard
+                  key={i}
+                  title={project.title}
+                  desc={project.desc}
+                  id={project.id}
+                  colorNum={i}
+                ></ProjectCard>
+              ))}
             </div>
           </div>
         </div>

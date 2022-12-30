@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 import Logo from "../assets/icons/logo.svg";
 
@@ -13,21 +14,23 @@ export const Nav = () => {
     setMenuActive(!menuActive);
   };
 
-  const goTo = (path: string) => {
-    console.log(path);
-  };
-
   const getMenuList = () => {
     return (
       <>
-        <li onClick={() => goTo("/projetos")}>
-          <DoubleText text="Projetos"></DoubleText>
+        <li>
+          <Link href={"/#projetos"}>
+            <DoubleText text="Projetos" colorTemp="hot"></DoubleText>
+          </Link>
         </li>
-        <li onClick={() => goTo("/sobre-mim")}>
-          <DoubleText text="Sobre"></DoubleText>
+        <li>
+          <Link href={"/#sobre"}>
+            <DoubleText text="Sobre" colorTemp="cold"></DoubleText>
+          </Link>
         </li>
-        <li onClick={() => goTo("/contato")}>
-          <DoubleText text="Contato"></DoubleText>
+        <li>
+          <Link href={"#contato"}>
+            <DoubleText text="Contato" colorTemp="hot"></DoubleText>
+          </Link>
         </li>
       </>
     );
@@ -36,7 +39,9 @@ export const Nav = () => {
   return (
     <nav className={styles.container}>
       <div className={styles.title}>
-        <Logo />
+        <Link href={"/"}>
+          <Logo />
+        </Link>
       </div>
       <ul>{getMenuList()}</ul>
       <div className={styles.burg} onClick={openCloseDrawer}>

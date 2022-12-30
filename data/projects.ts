@@ -1,6 +1,8 @@
 /*
 
 {
+  id: "",
+  date: "",
   title: "",
   desc: "",
   textList: [],
@@ -26,10 +28,28 @@
 
 */
 
+export interface IProjectsData {
+  id: string;
+  date: string;
+  title: string;
+  desc: string;
+  stack: string;
+  textList: string[];
+  techList: string[];
+  imgList: {
+    imgName: string;
+    title: string;
+    desc: string;
+  }[];
+}
+
 export const projectsData = [
   {
+    id: "test1",
+    date: "01/01/2023",
     title: "meu_portfólio",
     desc: "Meu portfólio pessoal",
+    stack: "Fullstack",
     textList: [
       "Esse projeto é um portfólio pessoal, o seu principal objectivo é a exibição de outros projetos.",
       "O design do site é feito de modo a ser simples e limpo, para que os projetos possam receber mais atenção.",
@@ -54,8 +74,11 @@ export const projectsData = [
     ],
   },
   {
+    id: "test2",
+    date: "01/01/2023",
     title: "untitled-camp",
     desc: "Site de Motocross e off-road",
+    stack: "Frontend",
     textList: [
       "Este projeto é um app fullstack, onde, na parte frontend é possível navegar por páginas, encontrar produtos e adicioná-los em um carrinho e criar contas pessoais. Já o backend é uma API que da suporte ao frontend.",
       "O frontend é um site sobre natureza, motocross e off-road. O site possui uma seção de shopping onde se é possível procurar por produtos e os adicioná-los a um carrinho, o site também oferece a opção de criação de uma conta pessoal simples.",
@@ -90,8 +113,11 @@ export const projectsData = [
     ],
   },
   {
+    id: "test3",
+    date: "01/01/2023",
     title: "e-commerce",
     desc: "Um e-commerce feito com React",
+    stack: "Frontend",
     textList: [
       "Este site é um E-Commerce, onde é possível navegar por páginas e encontrar produtos, os adicionando em um carrinho para realizar a compra mais tarde.",
       "O site foi feito com base no “design” Clay Shop E-Commerce encontrado no site UI Store Design. Também foi utilizado a Fake Store API para mostrar alguns produtos e poder, assim, adicionar ou remover produtos do carrinho.",
@@ -117,8 +143,11 @@ export const projectsData = [
     ],
   },
   {
+    id: "test4",
+    date: "01/01/2023",
     title: "graphql_server",
     desc: "Um servidor backend feito com GraphQl e TypeScript",
+    stack: "Backend",
     textList: [
       'Este projeto é uma API backend em GraphQL. Nesta API é possível criar e fazer "login" em uma conta, onde se pode criar e salvar "eventos".',
       "O projeto faz parte de um curso em que toda a parte frontend e backend é desenvolvida. Aqui só se encontra a parte backend, onde foi modificada para utilizar TypeScript e outras tecnologias.",
@@ -152,8 +181,11 @@ export const projectsData = [
     ],
   },
   {
+    id: "test5",
+    date: "01/01/2023",
     title: "twitter_clone",
     desc: "Um site clone do Twitter feito com React e Firebase",
+    stack: "Fullstack",
     textList: [
       'Este site foi um dos meus primeiros projetos feitos utilizando React. O site é um clone do Twitter, onde o usuário pode criar posts, comentar e dar um "Like" tanto no post, quanto no comentário. O site também possui um "feed" onde os posts serão mostrados.',
       'Como esse foi um dos primeiros projetos criados por min, ele possui várias coisas que me desagradam, como, por exemplo, a não utilização de "tokens" para o processo de “login”, e a organização dos dados no Firebase.',
@@ -178,8 +210,11 @@ export const projectsData = [
     ],
   },
   {
+    id: "test6",
+    date: "01/01/2023",
     title: "news_site",
     desc: "Um site de Notícias utilizando uma API externa",
+    stack: "Frontend",
     textList: [
       "Este projeto é um site de notícias inspirado no site da Jovem Pan e do G1. O site possui uma página inicial onde há varias sessões com notícias de diferentes tipos exibidas em vários grids. O site também Possui uma barra de busca e varias abas para as diferentes categorias.",
       "O projeto foi feito para um melhor entendimento do funcionamento do Redux, dos layouts de grid e de APIs externas",

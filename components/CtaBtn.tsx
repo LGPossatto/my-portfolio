@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "../styles/components/CtaBtn.module.scss";
-import { getRandomColor } from "../utils/getRandomColor";
+import { Colors } from "../utils/Colors";
 import { DoubleText } from "./DoubleText";
 
 interface props {
@@ -13,7 +13,7 @@ export const CtaBtn = ({ text, onClick }: props) => {
   const [color, setColor] = useState("#fafafa");
 
   const setNewColor = () => {
-    setColor(getRandomColor());
+    setColor(Colors.getRandomColor());
   };
 
   useEffect(() => {

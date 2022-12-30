@@ -12,7 +12,16 @@
     align-items: center;
 
     svg {
+      cursor: pointer;
       transform: scale(1.5);
+
+      &:active {
+        opacity: 0.8;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
     }
   }
 

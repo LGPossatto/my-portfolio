@@ -10,7 +10,7 @@ export const Projects = () => {
   const [isFav, setIsFav] = useState(true);
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="projetos">
       <h2>Projetos</h2>
       <section className={styles.projects}>
         <div className={styles.tabs}>
@@ -19,12 +19,14 @@ export const Projects = () => {
             onClick={() => setIsFav(true)}
             active={isFav}
             width="fill"
+            colorTemp="cold"
           ></LineBtn>
           <LineBtn
             text="Tudo"
             onClick={() => setIsFav(false)}
             active={!isFav}
             width="fill"
+            colorTemp="hot"
           ></LineBtn>
         </div>
         <div className={styles.list}>

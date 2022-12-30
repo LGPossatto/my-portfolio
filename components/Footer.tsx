@@ -13,7 +13,7 @@ export const Footer = () => {
       <span className={styles["dec-r-3"]}></span>
       <span className={styles["dec-r-4"]}></span>
       <div className={styles.content}>
-        <section className={styles.info}>
+        <section className={styles.info} id="contato">
           <h4>Contato</h4>
           <p>
             <strong>Email:</strong> lgpossatto@gmail.com

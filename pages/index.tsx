@@ -9,12 +9,12 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Nav></Nav>
-      <Line></Line>
+      <Line colorTemp="cold"></Line>
       <Header></Header>
-      <Line></Line>
+      <Line colorTemp="hot"></Line>
       <Projects></Projects>
-      <Line></Line>
-      <section className={styles.about}>
+      <Line colorTemp="cold"></Line>
+      <section className={styles.about} id="sobre">
         <span></span>
         <h2>About</h2>
         <p>
