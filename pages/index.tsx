@@ -1,3 +1,7 @@
+import { useContext, useEffect } from "react";
+
+import { ProjectsContext } from "../context/projects/ProjectsContext";
+
 import styles from "../styles/pages/Home.module.scss";
 import { Nav } from "../components/Nav";
 import { Header } from "../components/Header";
@@ -6,6 +10,12 @@ import { Line } from "../components/Line";
 import { Projects } from "../components/Projects";
 
 export default function Home() {
+  const { getProjects } = useContext(ProjectsContext);
+
+  useEffect(() => {
+    getProjects();
+  }, []);
+
   return (
     <div className={styles.container}>
       <Nav></Nav>

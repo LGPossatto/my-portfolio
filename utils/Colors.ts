@@ -2,18 +2,19 @@ import { getRandomNumber } from "./getRandomNumber";
 
 export class Colors {
   static sortedColors = [
-    "#ff0000",
-    "#ff4d00",
-    "#ffea00",
-    "#b7ff00",
-    "#04ff00",
-    "#00ffb3",
-    "#00e5ff",
-    //"#004cff",
-    "#4400ff",
-    "#9000ff",
-    "#ff00ee",
-    "#ff0066",
+    "#8300e8",
+    "#1290ff",
+    "#00daf2",
+    "#00e8a3",
+    "#04e600",
+    "#8be800",
+    //   /\-cold
+    //   \/-hot
+    "#e6d300",
+    "#eb4700",
+    "#eb0000",
+    "#ed005f",
+    "#ed00dd",
   ];
   static gradientColors = [
     "#1400ff, #00cfff",

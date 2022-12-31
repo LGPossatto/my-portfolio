@@ -135,7 +135,7 @@ export default function Projects() {
         <div className={styles.btn}>
           <CtaBtn
             text="Voltar aos projetos"
-            onClick={() => console.log("button")}
+            onClick={() => router.push("/")}
           ></CtaBtn>
         </div>
       </section>
