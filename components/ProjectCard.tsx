@@ -11,7 +11,8 @@ interface props {
 
 export const ProjectCard = ({ title, desc, id, colorNum = 0 }: props) => {
   return (
-    <div
+    <Link
+      href={`/projetos/${id}`}
       className={styles.container}
       style={{
         backgroundImage: `linear-gradient(to top right, ${Colors.getGradient(
@@ -19,10 +20,8 @@ export const ProjectCard = ({ title, desc, id, colorNum = 0 }: props) => {
         )})`,
       }}
     >
-      <Link href={`/projetos/${id}`}>
-        <h3>{title}</h3>
-        <p>{desc}</p>
-      </Link>
-    </div>
+      <h3>{title}</h3>
+      <p>{desc}</p>
+    </Link>
   );
 };

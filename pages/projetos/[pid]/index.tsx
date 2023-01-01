@@ -16,6 +16,7 @@ import { CtaBtn } from "../../../components/CtaBtn";
 import { Carousel } from "../../../components/Carousel";
 import { ImgDisplay } from "../../../components/ImgDisplay";
 import { ProjectCard } from "../../../components/ProjectCard";
+import { DateBlock } from "../../../components/DateBlock";
 
 const imgObjects = [
   {
@@ -96,7 +97,8 @@ export default function Projects() {
                 <strong>Stack:</strong> {project?.stack}
               </span>
               <span>
-                <strong>Data:</strong> {project?.date}
+                <strong>Data:</strong>{" "}
+                <DateBlock date={project?.date}></DateBlock>
               </span>
             </div>
             <div className={styles.desc}>

@@ -3,16 +3,18 @@ import { createContext, FC, useReducer } from "react";
 import { projectsTypes } from "./projectsTypes";
 import { ProjectsReducer } from "./ProjectsReducer";
 
+import { IProjectsData } from "../../data/projects";
+
 interface props {
   children: React.ReactNode;
 }
 
 export interface IProjectsState {
-  projects: { title: string; desc: string }[];
+  projects: IProjectsData[];
 }
 
 interface IProjectsContext {
-  projects: { title: string; desc: string }[];
+  projects: IProjectsData[];
   getProjects: () => Promise<void>;
 }
 
@@ -33,8 +35,6 @@ export const ProjectsProvider: FC<props> = ({ children }) => {
   const getProjects = async () => {
     const res = await fetch(`${originUrl}/api/projects`);
     const data = await res.json();
-
-    console.log(data.data);
 
     dispatch({ type: projectsTypes.GET_PROJECTS, payload: data.data });
   };

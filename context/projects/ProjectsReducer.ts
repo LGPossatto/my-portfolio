@@ -9,7 +9,7 @@ export const ProjectsReducer = (
 
   switch (type) {
     case projectsTypes.GET_PROJECTS:
-      return { ...state, projects: [...state.projects, ...payload] };
+      return { ...state, projects: [...payload] };
     default:
       return state;
   }
