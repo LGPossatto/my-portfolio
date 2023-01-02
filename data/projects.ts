@@ -75,7 +75,7 @@ export const projectsData = [
   },
   {
     id: "test2",
-    date: "01/01/2023",
+    date: "06/01/2022",
     title: "untitled-camp",
     desc: "Site de Motocross e off-road",
     stack: "Frontend",
@@ -114,7 +114,7 @@ export const projectsData = [
   },
   {
     id: "test3",
-    date: "01/01/2023",
+    date: "01/03/2022",
     title: "e-commerce",
     desc: "Um e-commerce feito com React",
     stack: "Frontend",
@@ -144,7 +144,7 @@ export const projectsData = [
   },
   {
     id: "test4",
-    date: "01/01/2023",
+    date: "01/02/2021",
     title: "graphql_server",
     desc: "Um servidor backend feito com GraphQl e TypeScript",
     stack: "Backend",
@@ -182,7 +182,7 @@ export const projectsData = [
   },
   {
     id: "test5",
-    date: "01/01/2023",
+    date: "01/01/2021",
     title: "twitter_clone",
     desc: "Um site clone do Twitter feito com React e Firebase",
     stack: "Fullstack",
@@ -211,7 +211,7 @@ export const projectsData = [
   },
   {
     id: "test6",
-    date: "01/01/2023",
+    date: "01/02/2021",
     title: "news_site",
     desc: "Um site de Notícias utilizando uma API externa",
     stack: "Frontend",

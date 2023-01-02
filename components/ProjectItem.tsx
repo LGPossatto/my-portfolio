@@ -1,4 +1,5 @@
 import styles from "../styles/components/ProjectItem.module.scss";
+import { DateBlock } from "./DateBlock";
 
 interface props {
   title: string;
@@ -11,7 +12,7 @@ export const ProjectItem = ({ title, desc, date }: props) => {
     <div className={styles.container}>
       <h3>{title}</h3>
       <p>{desc}</p>
-      <span className="date">{date}</span>
+      <DateBlock date={date}></DateBlock>
     </div>
   );
 };
