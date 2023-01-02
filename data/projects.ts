@@ -16,6 +16,13 @@ export interface IProjectsInfo extends IFav {
   }[];
 }
 
+export interface IProjectsRest {
+  title: string;
+  desc: string;
+  data: string;
+  gitLink: string;
+}
+
 export const projectsFav = [
   "meu_portfolio",
   "untitled_camp",
@@ -220,5 +227,110 @@ export const projectsData: IProjectsInfo[] = [
         desc: "Busque notícias mais específicas através da barra de pesquisa.",
       },
     ],
+  },
+];
+
+export const projectsRest: IProjectsRest[] = [
+  {
+    title: "test 1",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 2",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 3",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 4",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 5",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 6",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 7",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 8",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 9",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 10",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 11",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 12",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 13",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 14",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 15",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 16",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
+  },
+  {
+    title: "test 17",
+    desc: "test 12",
+    data: "12/12/1987",
+    gitLink: "https://github.com/LGPossatto",
   },
 ];

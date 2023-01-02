@@ -12,8 +12,6 @@
     gap: 2px;
     grid-template-columns: repeat(6, 1fr);
 
-    max-height: 168px;
-
     @include backgroundGradient();
 
     @include bp-small {

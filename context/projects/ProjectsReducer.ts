@@ -15,6 +15,8 @@ export const ProjectsReducer = (
         ...state,
         projectsInfo: { ...state.projectsInfo, [payload.id]: payload },
       };
+    case projectsTypes.GET_REST_PROJECTS:
+      return { ...state, projectsRest: [...payload] };
     default:
       return state;
   }

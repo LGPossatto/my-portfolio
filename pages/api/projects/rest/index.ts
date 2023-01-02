@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IProjectsInfo, projectsData } from "../../../../data/projects";
+import { IProjectsRest, projectsRest } from "../../../../data/projects";
 
 interface IData {
   status: string;
@@ -8,7 +8,7 @@ interface IData {
     type: string;
     message: string;
   } | null;
-  data: IProjectsInfo | null;
+  data: IProjectsRest[] | null;
 }
 
 export default function handler(
@@ -16,13 +16,7 @@ export default function handler(
   res: NextApiResponse<IData>
 ) {
   try {
-    const { pid } = req.query;
-    const projectInfo = projectsData.find((project) => project.id === pid);
-
-    if (!projectInfo)
-      throw new Error("The project ID is not valid or does not exist.");
-
-    res.status(200).json({ status: "ok", error: null, data: projectInfo });
+    res.status(200).json({ status: "ok", error: null, data: projectsRest });
   } catch (error) {
     res.status(500).json({
       status: "error",

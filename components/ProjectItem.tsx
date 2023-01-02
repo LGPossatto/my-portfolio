@@ -5,14 +5,15 @@ interface props {
   title: string;
   desc: string;
   date: string;
+  href: string;
 }
 
-export const ProjectItem = ({ title, desc, date }: props) => {
+export const ProjectItem = ({ title, desc, date, href }: props) => {
   return (
-    <div className={styles.container}>
+    <a href={href} target="_blank" className={styles.container}>
       <h3>{title}</h3>
       <p>{desc}</p>
       <DateBlock date={date}></DateBlock>
-    </div>
+    </a>
   );
 };

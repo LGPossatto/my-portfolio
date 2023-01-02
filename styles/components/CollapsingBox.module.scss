@@ -95,6 +95,12 @@
       border-bottom: 12px solid $color-black;
     }
   }
+
+  .children {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    max-height: 168px;
+  }
 }
 
 .open {

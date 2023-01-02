@@ -1,7 +1,8 @@
-import styles from "../styles/components/DateBlock.module.scss";
 import DangerIcon from "../assets/icons/triangle-exclamation-solid.svg";
 import AttetionIcon from "../assets/icons/circle-exclamation-solid.svg";
 import CheckIcon from "../assets/icons/circle-check-solid.svg";
+
+import styles from "../styles/components/DateBlock.module.scss";
 
 interface props {
   date?: string;

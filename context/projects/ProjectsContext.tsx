@@ -3,14 +3,14 @@ import { createContext, FC, useReducer } from "react";
 import { projectsTypes } from "./projectsTypes";
 import { ProjectsReducer } from "./ProjectsReducer";
 
-import { IFav, IProjectsInfo } from "../../data/projects";
+import { IFav, IProjectsInfo, IProjectsRest } from "../../data/projects";
 
 interface props {
   children: React.ReactNode;
 }
 
 export interface IProjectsState {
-  projects: IProjectsInfo[];
+  projectsRest: IProjectsRest[];
   projectsFav: IFav[];
   projectsInfo: { [x: string]: IProjectsInfo };
 }
@@ -18,19 +18,21 @@ export interface IProjectsState {
 interface IProjectsContext extends IProjectsState {
   getFavProjects: () => Promise<void>;
   getProjectById: (id: string) => Promise<void>;
+  getRestProjects: () => Promise<void>;
 }
 
 export const ProjectsContext = createContext<IProjectsContext>({
-  projects: [],
+  projectsRest: [],
   projectsFav: [],
   projectsInfo: {},
   getFavProjects: async () => {},
   getProjectById: async () => {},
+  getRestProjects: async () => {},
 });
 
 export const ProjectsProvider: FC<props> = ({ children }) => {
   const inicialState: IProjectsState = {
-    projects: [],
+    projectsRest: [],
     projectsFav: [],
     projectsInfo: {},
   };
@@ -44,7 +46,7 @@ export const ProjectsProvider: FC<props> = ({ children }) => {
   const getFavProjects = async () => {
     if (state.projectsFav.length > 0) return;
 
-    const res = await fetch(`${originUrl}/api/projects`);
+    const res = await fetch(`${originUrl}/api/projects/fav`);
     const data = await res.json();
 
     if (data.status === "ok")
@@ -61,14 +63,25 @@ export const ProjectsProvider: FC<props> = ({ children }) => {
       dispatch({ type: projectsTypes.GET_PROJECT_BY_ID, payload: data.data });
   };
 
+  const getRestProjects = async () => {
+    if (state.projectsRest.length > 0) return;
+
+    const res = await fetch(`${originUrl}/api/projects/rest`);
+    const data = await res.json();
+
+    if (data.status === "ok")
+      dispatch({ type: projectsTypes.GET_REST_PROJECTS, payload: data.data });
+  };
+
   return (
     <ProjectsContext.Provider
       value={{
-        projects: state.projects,
+        projectsRest: state.projectsRest,
         projectsFav: state.projectsFav,
         projectsInfo: state.projectsInfo,
         getFavProjects,
         getProjectById,
+        getRestProjects,
       }}
     >
       {children}

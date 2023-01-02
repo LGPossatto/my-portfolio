@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IFav, projectsData, projectsFav } from "../../../data/projects";
+import { IFav, projectsData, projectsFav } from "../../../../data/projects";
 
 interface IData {
   status: string;

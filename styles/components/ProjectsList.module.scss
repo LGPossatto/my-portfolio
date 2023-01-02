@@ -1,27 +1,50 @@
-@import "../_sass/colors";
 @import "../_sass/sizes";
+@import "../_sass/colors";
 
 .container {
-  .tabs {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 8px;
+  .info {
+    padding: 24px;
 
-    border-bottom: 4px solid $color-black;
+    background-image: linear-gradient(to right, $color-black, $color-grey-dark);
 
-    h3,
     p {
-      font-size: $fs-med;
+      font-size: $fs-small;
+      color: $color-white;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    > div > p:first-child {
+      margin: 24px 0 8px;
       font-weight: 700;
     }
+  }
 
-    :nth-child(2) {
-      width: 100%;
-      text-align: center;
-    }
+  .pag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    :nth-child(3) {
-      text-align: right;
+    margin-top: 24px;
+
+    .num {
+      cursor: pointer;
+      padding: 4px;
+      margin: 0 12px;
+
+      font-size: $fs-med;
+      font-weight: 700;
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:active {
+        opacity: 0.8;
+      }
     }
   }
 }

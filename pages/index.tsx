@@ -10,10 +10,11 @@ import { Line } from "../components/Line";
 import { Projects } from "../components/Projects";
 
 export default function Home() {
-  const { getFavProjects } = useContext(ProjectsContext);
+  const { getFavProjects, getRestProjects } = useContext(ProjectsContext);
 
   useEffect(() => {
     getFavProjects();
+    getRestProjects();
   }, []);
 
   return (

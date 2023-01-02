@@ -20,7 +20,7 @@ export const CollapsingBox: React.FC<props> = ({ title, children }) => {
       <span className={`${styles.arrow} ${styles["arrow-up-r"]}`}></span>
       <span className={`${styles.arrow} ${styles["arrow-down-l"]}`}></span>
       <span className={`${styles.arrow} ${styles["arrow-down-r"]}`}></span>
-      {children}
+      <div className={styles.children}>{children}</div>
     </div>
   );
 };
