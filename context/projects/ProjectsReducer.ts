@@ -8,8 +8,13 @@ export const ProjectsReducer = (
   const { type, payload } = action;
 
   switch (type) {
-    case projectsTypes.GET_PROJECTS:
-      return { ...state, projects: [...payload] };
+    case projectsTypes.GET_FAV_PROJECTS:
+      return { ...state, projectsFav: [...payload] };
+    case projectsTypes.GET_PROJECT_BY_ID:
+      return {
+        ...state,
+        projectsInfo: { ...state.projectsInfo, [payload.id]: payload },
+      };
     default:
       return state;
   }

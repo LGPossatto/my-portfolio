@@ -7,13 +7,13 @@ import styles from "../styles/components/ProjectsFav.module.scss";
 import { ProjectCard } from "./ProjectCard";
 
 export const ProjectsFav = () => {
-  const { projects } = useContext(ProjectsContext);
+  const { projectsFav } = useContext(ProjectsContext);
 
-  if (!projects) return <div>loading...</div>;
+  if (!projectsFav) return <div>loading...</div>;
 
   return (
     <div className={styles.container}>
-      {projects.map((project, i) => {
+      {projectsFav.map((project, i) => {
         return (
           <ProjectCard
             key={i}

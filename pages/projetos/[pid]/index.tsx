@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-import { IProjectsData, projectsData } from "../../../data/projects";
+import { ProjectsContext } from "../../../context/projects/ProjectsContext";
+
+import { IProjectsInfo, projectsData } from "../../../data/projects";
 import img1 from "../../../assets/images/img-1.jpg";
 import img2 from "../../../assets/images/img-2.jpg";
 import img3 from "../../../assets/images/img-3.jpg";
@@ -68,18 +70,25 @@ const imgObjects = [
 const imgList = [img1, img2, img3, img4, img5, img1, img2, img3, img4];
 
 export default function Projects() {
-  const [project, setProject] = useState<IProjectsData | undefined>(undefined);
+  const { projectsInfo, getProjectById } = useContext(ProjectsContext);
+  const [project, setProject] = useState<IProjectsInfo | undefined>(undefined);
   const [activeIndex, setActiveIndex] = useState(0);
   const router = useRouter();
   const { pid } = router.query;
 
-  const getProject = (id: string) => {
-    return projectsData.find((project) => project.id === id);
+  const getProject = (pid: string) => {
+    if (!projectsInfo[pid]) {
+      getProjectById(pid);
+    } else {
+      setProject(projectsInfo[pid]);
+    }
   };
 
   useEffect(() => {
-    setProject(getProject(pid as string));
-  }, [pid]);
+    getProject(pid as string);
+  }, [pid, projectsInfo]);
+
+  if (!projectsInfo[pid as string]) return <div>Loading...</div>;
 
   return (
     <div className={styles.container}>
@@ -103,8 +112,8 @@ export default function Projects() {
             </div>
             <div className={styles.desc}>
               <h2>Sobre o projeto</h2>
-              {project?.textList.map((text) => (
-                <p>{text}</p>
+              {project?.textList.map((text, i) => (
+                <p key={i}>{text}</p>
               ))}
             </div>
           </div>

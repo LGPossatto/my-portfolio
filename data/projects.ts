@@ -1,38 +1,11 @@
-/*
-
-{
-  id: "",
-  date: "",
-  title: "",
-  desc: "",
-  textList: [],
-  techList: [],
-  imgList: [
-    {
-      imgName: "",
-      title: "",
-      desc: "",
-    },
-    {
-      imgName: "",
-      title: "",
-      desc: "",
-    },
-    {
-      imgName: "",
-      title: "",
-      desc: "",
-    },
-  ],
-},
-
-*/
-
-export interface IProjectsData {
+export interface IFav {
   id: string;
-  date: string;
   title: string;
   desc: string;
+}
+
+export interface IProjectsInfo extends IFav {
+  date: string;
   stack: string;
   textList: string[];
   techList: string[];
@@ -43,11 +16,20 @@ export interface IProjectsData {
   }[];
 }
 
-export const projectsData = [
+export const projectsFav = [
+  "meu_portfolio",
+  "untitled_camp",
+  "clay_e_commerce",
+  "graphql_server",
+  "twitter_clone",
+  "news_site",
+];
+
+export const projectsData: IProjectsInfo[] = [
   {
-    id: "test1",
+    id: "meu_portfolio",
     date: "01/01/2023",
-    title: "meu_portfólio",
+    title: "Meu Portfólio",
     desc: "Meu portfólio pessoal",
     stack: "Fullstack",
     textList: [
@@ -74,7 +56,7 @@ export const projectsData = [
     ],
   },
   {
-    id: "test2",
+    id: "untitled_camp",
     date: "06/01/2022",
     title: "untitled-camp",
     desc: "Site de Motocross e off-road",
@@ -113,7 +95,7 @@ export const projectsData = [
     ],
   },
   {
-    id: "test3",
+    id: "clay_e_commerce",
     date: "01/03/2022",
     title: "e-commerce",
     desc: "Um e-commerce feito com React",
@@ -143,7 +125,7 @@ export const projectsData = [
     ],
   },
   {
-    id: "test4",
+    id: "graphql_server",
     date: "01/02/2021",
     title: "graphql_server",
     desc: "Um servidor backend feito com GraphQl e TypeScript",
@@ -181,9 +163,9 @@ export const projectsData = [
     ],
   },
   {
-    id: "test5",
+    id: "twitter_clone",
     date: "01/01/2021",
-    title: "twitter_clone",
+    title: "Twitter Clone",
     desc: "Um site clone do Twitter feito com React e Firebase",
     stack: "Fullstack",
     textList: [
@@ -210,9 +192,9 @@ export const projectsData = [
     ],
   },
   {
-    id: "test6",
+    id: "news_site",
     date: "01/02/2021",
-    title: "news_site",
+    title: "Site de Notícias",
     desc: "Um site de Notícias utilizando uma API externa",
     stack: "Frontend",
     textList: [
