@@ -93,7 +93,7 @@ export default function Projects() {
   return (
     <div className={styles.container}>
       <Nav></Nav>
-      <Line></Line>
+      <Line colorTemp="cold"></Line>
       <section className={styles.project}>
         <div className={styles["page-top"]}>
           <div className={styles["top-left"]}>

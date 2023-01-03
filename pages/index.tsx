@@ -2,6 +2,8 @@ import { useContext, useEffect } from "react";
 
 import { ProjectsContext } from "../context/projects/ProjectsContext";
 
+import WipIcon from "../assets/icons/wip.svg";
+
 import styles from "../styles/pages/Home.module.scss";
 import { Nav } from "../components/Nav";
 import { Header } from "../components/Header";
@@ -41,6 +43,11 @@ export default function Home() {
           placeat, veniam, atque praesentium vel porro aut illum distinctio
           impedit?
         </p>
+      </section>
+      <Line colorTemp="hot"></Line>
+      <section className={styles.wip}>
+        <WipIcon></WipIcon>
+        <h6>Work in Progress</h6>
       </section>
       <Footer></Footer>
     </div>

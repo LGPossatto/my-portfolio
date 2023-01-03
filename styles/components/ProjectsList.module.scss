@@ -2,6 +2,9 @@
 @import "../_sass/colors";
 
 .container {
+  position: relative;
+  min-height: 512px;
+
   .info {
     padding: 24px;
 
@@ -27,6 +30,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     margin-top: 24px;
 

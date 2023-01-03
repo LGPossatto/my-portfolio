@@ -72,25 +72,18 @@ export const ProjectsList = () => {
         <ArrowBtn
           left
           onClick={() => {
-            console.log(pageNumber);
-
             if (pageNumber > 0) setPageNumber(pageNumber - 1);
           }}
+          active={pageNumber > 0}
         ></ArrowBtn>
-        {Array(endPagNum)
-          .fill(0)
-          .map((_, i) => (
-            <span className={styles.num} onClick={() => setPageNumber(i)}>
-              <DoubleText
-                text={`${i + 1}`}
-                active={pageNumber === i}
-              ></DoubleText>
-            </span>
-          ))}
+        <span className={styles.num}>
+          <DoubleText text={`${pageNumber + 1}`} active></DoubleText>
+        </span>
         <ArrowBtn
           onClick={() => {
             if (pageNumber < endPagNum - 1) setPageNumber(pageNumber + 1);
           }}
+          active={pageNumber < endPagNum - 1}
         ></ArrowBtn>
       </div>
     </div>

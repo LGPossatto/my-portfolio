@@ -30,3 +30,12 @@
 .left {
   transform: rotate(180deg);
 }
+
+.inactive {
+  cursor: default;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
