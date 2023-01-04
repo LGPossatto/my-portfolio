@@ -26,6 +26,7 @@ export default function handler(
             id: projectsData[j].id,
             title: projectsData[j].title,
             desc: projectsData[j].desc,
+            techList: projectsData[j].techList,
           };
           fav.push(filteredProject);
           break;

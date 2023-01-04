@@ -5,10 +5,6 @@ import { ProjectsReducer } from "./ProjectsReducer";
 
 import { IFav, IProjectsInfo, IProjectsRest } from "../../data/projects";
 
-interface props {
-  children: React.ReactNode;
-}
-
 export interface IProjectsState {
   projectsRest: IProjectsRest[];
   projectsFav: IFav[];
@@ -29,6 +25,10 @@ export const ProjectsContext = createContext<IProjectsContext>({
   getProjectById: async () => {},
   getRestProjects: async () => {},
 });
+
+interface props {
+  children: React.ReactNode;
+}
 
 export const ProjectsProvider: FC<props> = ({ children }) => {
   const inicialState: IProjectsState = {

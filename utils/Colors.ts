@@ -39,7 +39,7 @@ export class Colors {
     if (temp === "cold") {
       return Colors.sortedColors[getRandomNumber(middleIndex)];
     } else if (temp === "hot") {
-      return Colors.sortedColors[getRandomNumber(lastIndex, middleIndex)];
+      return Colors.sortedColors[getRandomNumber(lastIndex, middleIndex + 1)];
     } else {
       return Colors.sortedColors[getRandomNumber(lastIndex)];
     }

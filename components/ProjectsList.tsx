@@ -1,8 +1,7 @@
 import { useContext, useState } from "react";
 
+import { FilterContext } from "../context/filter/FilterContext";
 import { ProjectsContext } from "../context/projects/ProjectsContext";
-
-import { Colors } from "../utils/Colors";
 
 import DangerIcon from "../assets/icons/triangle-exclamation-solid.svg";
 import AttetionIcon from "../assets/icons/circle-exclamation-solid.svg";
@@ -16,26 +15,48 @@ import { DoubleText } from "./DoubleText";
 
 export const ProjectsList = () => {
   const [pageNumber, setPageNumber] = useState(0);
+  const [endPagNum, setEndPagNum] = useState(0);
   const { projectsRest } = useContext(ProjectsContext);
-  const endPagNum = Math.ceil(projectsRest.length / 5);
+  const { tags, tagsNum } = useContext(FilterContext);
+
+  const getProjectsList = () => {
+    if (tagsNum > 0) {
+      return projectsRest.filter((project) => {
+        let matchNum = 0;
+
+        for (let i = 0; i < project.techList.length; i++) {
+          if (tags[project.techList[i]]) {
+            matchNum++;
+          }
+        }
+
+        if (matchNum === tagsNum) return project;
+      });
+    }
+
+    return projectsRest;
+  };
 
   const getProjectsInRange = (start: number, end: number) => {
-    const projects = [];
-    if (end >= projectsRest.length) end = projectsRest.length - 1;
+    const projectsList = getProjectsList();
+    const projectsItems = [];
+
+    if (end >= projectsList.length) end = projectsList.length - 1;
+    //setEndPagNum(Math.ceil(projectsList.length / 5));
 
     for (let i = start; i <= end; i++) {
-      projects.push(
+      projectsItems.push(
         <ProjectItem
           key={i}
-          date={projectsRest[i].data}
-          desc={projectsRest[i].desc}
-          title={projectsRest[i].title}
-          href={projectsRest[i].gitLink}
+          date={projectsList[i]!.data}
+          desc={projectsList[i]!.desc}
+          title={projectsList[i]!.title}
+          href={projectsList[i]!.gitLink}
         ></ProjectItem>
       );
     }
 
-    return projects;
+    return projectsItems;
   };
 
   if (!projectsRest) return <div>Loading...</div>;

@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 
+import { FilterProvider } from "../context/filter/FilterContext";
 import { ProjectsContext } from "../context/projects/ProjectsContext";
 
 import WipIcon from "../assets/icons/wip.svg";
@@ -25,7 +26,9 @@ export default function Home() {
       <Line colorTemp="cold"></Line>
       <Header></Header>
       <Line colorTemp="hot"></Line>
-      <Projects></Projects>
+      <FilterProvider>
+        <Projects></Projects>
+      </FilterProvider>
       <Line colorTemp="cold"></Line>
       <section className={styles.about} id="sobre">
         <span></span>

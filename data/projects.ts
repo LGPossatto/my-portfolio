@@ -2,6 +2,7 @@ export interface IFav {
   id: string;
   title: string;
   desc: string;
+  techList: string[];
 }
 
 export interface IProjectsInfo extends IFav {
@@ -21,6 +22,7 @@ export interface IProjectsRest {
   desc: string;
   data: string;
   gitLink: string;
+  techList: string[];
 }
 
 export const projectsFav = [
@@ -112,7 +114,7 @@ export const projectsData: IProjectsInfo[] = [
       "O site foi feito com base no “design” Clay Shop E-Commerce encontrado no site UI Store Design. Também foi utilizado a Fake Store API para mostrar alguns produtos e poder, assim, adicionar ou remover produtos do carrinho.",
       "*O projeto não esta finalizado, portanto, não contém todas as funcionalidades necessárias. O objetivo principal desse app é a tradução do design para o navegador, utilizando o que o React tem a oferecer.",
     ],
-    techList: ["HTML", "CSS", "SASS", "TypeScript", "React"],
+    techList: ["HTML", "CSS", "Sass", "TypeScript", "React"],
     imgList: [
       {
         imgName: "",
@@ -179,7 +181,7 @@ export const projectsData: IProjectsInfo[] = [
       'Este site foi um dos meus primeiros projetos feitos utilizando React. O site é um clone do Twitter, onde o usuário pode criar posts, comentar e dar um "Like" tanto no post, quanto no comentário. O site também possui um "feed" onde os posts serão mostrados.',
       'Como esse foi um dos primeiros projetos criados por min, ele possui várias coisas que me desagradam, como, por exemplo, a não utilização de "tokens" para o processo de “login”, e a organização dos dados no Firebase.',
     ],
-    techList: ["HTML", "CSS", "SASS", "JavaScript", "React", "Firebase"],
+    techList: ["HTML", "CSS", "Sass", "Javascript", "React", "Firebase"],
     imgList: [
       {
         imgName: "",
@@ -209,7 +211,7 @@ export const projectsData: IProjectsInfo[] = [
       "O projeto foi feito para um melhor entendimento do funcionamento do Redux, dos layouts de grid e de APIs externas",
       "*O site não mostra notícias dinâmicas, já que ele não está conectado a API por motivos de restrição a desenvolvedores impostas pela própria API.",
     ],
-    techList: ["HTML", "CSS", "SASS", "JavaScript", "React", "Redux"],
+    techList: ["HTML", "CSS", "Sass", "Javascript", "React", "Redux"],
     imgList: [
       {
         imgName: "",
@@ -236,101 +238,118 @@ export const projectsRest: IProjectsRest[] = [
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["HTML", "CSS", "Sass", "Javascript", "React", "Firebase"],
   },
   {
     title: "test 2",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["HTML", "Sass", "Javascript", "React", "Firebase"],
   },
   {
     title: "test 3",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["HTML", "CSS", "Javascript", "React", "Firebase"],
   },
   {
     title: "test 4",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["HTML", "CSS", "Sass", "React", "Firebase"],
   },
   {
     title: "test 5",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["HTML", "CSS", "Sass", "Javascript", "Firebase"],
   },
   {
     title: "test 6",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["HTML", "CSS", "Sass", "Javascript", "React"],
   },
   {
     title: "test 7",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["HTML"],
   },
   {
     title: "test 8",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["CSS"],
   },
   {
     title: "test 9",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["Sass"],
   },
   {
     title: "test 10",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["Javascript"],
   },
   {
     title: "test 11",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["React"],
   },
   {
     title: "test 12",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["Firebase"],
   },
   {
     title: "test 13",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["HTML", "Sass", "React"],
   },
   {
     title: "test 14",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["CSS", "Javascript", "Firebase"],
   },
   {
     title: "test 15",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["Javascript", "React", "Firebase"],
   },
   {
     title: "test 16",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: ["HTML", "CSS", "Sass"],
   },
   {
     title: "test 17",
     desc: "test 12",
     data: "12/12/1987",
     gitLink: "https://github.com/LGPossatto",
+    techList: [],
   },
 ];
