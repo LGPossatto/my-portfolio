@@ -1,0 +1,29 @@
+@import "../../_sass/sizes";
+
+@keyframes opacityUp {
+  //this stop the icon flicking
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.container {
+  animation-name: opacityUp;
+  animation-delay: 0.05s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+  svg {
+    display: block;
+    margin: 24px auto 0;
+  }
+
+  h6 {
+    text-align: center;
+    font-size: $fs-bigger;
+    font-weight: 700;
+  }
+}

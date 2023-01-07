@@ -4,8 +4,8 @@ import Link from "next/link";
 import Logo from "../assets/icons/logo.svg";
 
 import styles from "../styles/components/Nav.module.scss";
-import { Drawer } from "./Drawer";
-import { DoubleText } from "./DoubleText";
+import { Drawer } from "./boxes/Drawer";
+import { DoubleText } from "./misc/DoubleText";
 
 export const Nav = () => {
   const [menuActive, setMenuActive] = useState(false);

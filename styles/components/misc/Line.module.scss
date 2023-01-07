@@ -1,0 +1,39 @@
+@import "../../_sass/colors";
+@import "../../_sass/breakpoints";
+
+.container {
+  position: relative;
+  left: -60px;
+
+  width: calc(100% + 120px);
+  height: 6px;
+
+  .top {
+    display: block;
+
+    position: relative;
+    z-index: 1;
+    left: 1px;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: $color-black;
+  }
+
+  .bot {
+    display: block;
+
+    position: absolute;
+    top: 2px;
+    left: -1px;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  @include bp-med {
+    width: calc(100% + 10vw);
+    left: -5vw;
+  }
+}

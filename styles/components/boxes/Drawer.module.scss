@@ -1,0 +1,40 @@
+@import "../../_sass/colors";
+
+.container {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  transform: translateX(calc(100% + 8px));
+  transition: transform 0.3s ease-in-out;
+
+  padding: 24px;
+  padding-right: 36px;
+
+  background-color: $color-white;
+
+  box-shadow: 0px -4px 8px black;
+
+  .close {
+    cursor: pointer;
+
+    &:active {
+      opacity: 0.85;
+    }
+
+    svg {
+      display: block;
+
+      width: 32px;
+      height: 32px;
+      padding: 2px;
+      margin: 4px;
+    }
+  }
+}
+
+.drawer-active {
+  transform: translateX(0);
+}

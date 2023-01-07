@@ -9,8 +9,8 @@ import styles from "../styles/pages/Home.module.scss";
 import { Nav } from "../components/Nav";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { Line } from "../components/Line";
-import { Projects } from "../components/Projects";
+import { Line } from "../components/misc/Line";
+import { Projects } from "../components/projects/Projects";
 
 export default function Home() {
   const { getFavProjects, getRestProjects } = useContext(ProjectsContext);

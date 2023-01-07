@@ -1,0 +1,43 @@
+@import "../../_sass/sizes";
+@import "../../_sass/colors";
+
+.container {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  padding: 8px;
+
+  background-color: $color-white;
+
+  &:active {
+    opacity: 0.95;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin: 0 6px;
+
+      text-align: right;
+      font-size: $fs-small;
+      font-weight: 600;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 1;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
