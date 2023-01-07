@@ -27,9 +27,9 @@ export const DateBlock = ({ date }: props) => {
     );
 
     // ignoring leap years
-    if (diffDays >= 365) {
+    if (diffDays >= 548) {
       return <DangerIcon></DangerIcon>;
-    } else if (diffDays >= 183) {
+    } else if (diffDays >= 274) {
       return <AttetionIcon></AttetionIcon>;
     } else {
       return <CheckIcon></CheckIcon>;
@@ -38,8 +38,21 @@ export const DateBlock = ({ date }: props) => {
 
   return (
     <span className={styles.container}>
-      {getIcon(date!)}
-      {date ? date : "??/??/????"}
+      <p>
+        {getIcon(date!)}
+        {date ? date : "??/??/????"}
+      </p>
+      <div className={styles.tooltip}>
+        <div>
+          <DangerIcon></DangerIcon> - Projeto muito antigo.
+        </div>
+        <div>
+          <AttetionIcon></AttetionIcon> - Projeto antigo.
+        </div>
+        <div>
+          <CheckIcon></CheckIcon> - Projeto recente.
+        </div>
+      </div>
     </span>
   );
 };

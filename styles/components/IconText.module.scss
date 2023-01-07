@@ -1,0 +1,14 @@
+@import "../_sass/sizes";
+
+.container {
+  svg {
+    display: block;
+    margin: 24px auto 0;
+  }
+
+  h6 {
+    text-align: center;
+    font-size: $fs-bigger;
+    font-weight: 700;
+  }
+}
