@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 
-import { IFav } from "../../data/projects";
+import { IFav } from "../../data/projectsData";
 
 import { ProjectsContext } from "../../context/projects/ProjectsContext";
 import { FilterContext } from "../../context/filter/FilterContext";

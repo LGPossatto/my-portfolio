@@ -1,3 +1,5 @@
+import { TECHTYPES } from "./techTypes";
+
 export interface IFav {
   id: string;
   title: string;
@@ -5,11 +7,13 @@ export interface IFav {
   techList: string[];
 }
 
-export interface IProjectsInfo extends IFav {
+export interface IProjectsData extends IFav {
   date: string;
   stack: string;
   textList: string[];
   techList: string[];
+  gitLink: string;
+  siteLink: string;
   imgList: {
     imgName: string;
     title: string;
@@ -17,35 +21,35 @@ export interface IProjectsInfo extends IFav {
   }[];
 }
 
-export interface IProjectsRest {
-  title: string;
-  desc: string;
-  data: string;
-  gitLink: string;
-  techList: string[];
-}
-
-export const projectsFav = [
+export const projectsFavIdList = [
   "meu_portfolio",
   "untitled_camp",
-  "clay_e_commerce",
+  "e_commerce_clay",
   "graphql_server",
   "twitter_clone",
   "news_site",
 ];
 
-export const projectsData: IProjectsInfo[] = [
+export const projectsData: IProjectsData[] = [
   {
     id: "meu_portfolio",
     date: "01/01/2023",
     title: "Meu Portfólio",
     desc: "Meu portfólio pessoal",
     stack: "Fullstack",
+    gitLink: "https://github.com/LGPossatto/my-portfolio",
+    siteLink: "https://lgpossatto.netlify.app",
     textList: [
       "Esse projeto é um portfólio pessoal, o seu principal objectivo é a exibição de outros projetos.",
       "O design do site é feito de modo a ser simples e limpo, para que os projetos possam receber mais atenção.",
     ],
-    techList: ["Nextjs", "TypeScript", "Sass", "mongoDB"],
+    techList: [
+      TECHTYPES.HTML,
+      TECHTYPES.CSS,
+      TECHTYPES.SASS,
+      TECHTYPES.TYPESCRIPT,
+      TECHTYPES.NEXTJS,
+    ],
     imgList: [
       {
         imgName: "",
@@ -68,8 +72,10 @@ export const projectsData: IProjectsInfo[] = [
     id: "untitled_camp",
     date: "06/01/2022",
     title: "untitled-camp",
-    desc: "Site de Motocross e off-road",
-    stack: "Frontend",
+    desc: "Site de motocross e off-road",
+    stack: "FullStack",
+    gitLink: "https://github.com/LGPossatto/untitled-camp",
+    siteLink: "https://untitledcamp.netlify.app",
     textList: [
       "Este projeto é um app fullstack, onde, na parte frontend é possível navegar por páginas, encontrar produtos e adicioná-los em um carrinho e criar contas pessoais. Já o backend é uma API que da suporte ao frontend.",
       "O frontend é um site sobre natureza, motocross e off-road. O site possui uma seção de shopping onde se é possível procurar por produtos e os adicioná-los a um carrinho, o site também oferece a opção de criação de uma conta pessoal simples.",
@@ -77,13 +83,14 @@ export const projectsData: IProjectsInfo[] = [
       "*O objetivo desse projeto era criar uma aplicação fullstack, onde o frontend interagia e consumia as informações providas pelo backend.",
     ],
     techList: [
-      "TypeScript",
-      "React",
-      "NodeJs",
-      "Express",
-      "MongoDB",
-      "Mongoose",
-      "jsonwebtoken",
+      TECHTYPES.HTML,
+      TECHTYPES.CSS,
+      TECHTYPES.SASS,
+      TECHTYPES.TYPESCRIPT,
+      TECHTYPES.REACT,
+      TECHTYPES.NODEJS,
+      TECHTYPES.EXPRESS,
+      TECHTYPES.MONGODB,
     ],
     imgList: [
       {
@@ -104,17 +111,25 @@ export const projectsData: IProjectsInfo[] = [
     ],
   },
   {
-    id: "clay_e_commerce",
-    date: "01/03/2022",
-    title: "e-commerce",
+    id: "e_commerce_clay",
+    date: "11/04/2021",
+    title: "E-Commerce",
     desc: "Um e-commerce feito com React",
     stack: "Frontend",
+    gitLink: "https://github.com/LGPossatto/e-commerce-clay",
+    siteLink: "https://claycommerce.netlify.app",
     textList: [
       "Este site é um E-Commerce, onde é possível navegar por páginas e encontrar produtos, os adicionando em um carrinho para realizar a compra mais tarde.",
       "O site foi feito com base no “design” Clay Shop E-Commerce encontrado no site UI Store Design. Também foi utilizado a Fake Store API para mostrar alguns produtos e poder, assim, adicionar ou remover produtos do carrinho.",
       "*O projeto não esta finalizado, portanto, não contém todas as funcionalidades necessárias. O objetivo principal desse app é a tradução do design para o navegador, utilizando o que o React tem a oferecer.",
     ],
-    techList: ["HTML", "CSS", "Sass", "TypeScript", "React"],
+    techList: [
+      TECHTYPES.HTML,
+      TECHTYPES.CSS,
+      TECHTYPES.SASS,
+      TECHTYPES.TYPESCRIPT,
+      TECHTYPES.REACT,
+    ],
     imgList: [
       {
         imgName: "",
@@ -135,23 +150,25 @@ export const projectsData: IProjectsInfo[] = [
   },
   {
     id: "graphql_server",
-    date: "01/02/2021",
-    title: "graphql_server",
+    date: "08/07/2021",
+    title: "Servidor GraphQL",
     desc: "Um servidor backend feito com GraphQl e TypeScript",
     stack: "Backend",
+    gitLink:
+      "https://github.com/LGPossatto/graphql-apollo-mongodb-typescript-event-booking",
+    siteLink:
+      "https://graphql-apollo-mongodb-typescript-event.onrender.com/graphql",
     textList: [
       'Este projeto é uma API backend em GraphQL. Nesta API é possível criar e fazer "login" em uma conta, onde se pode criar e salvar "eventos".',
       "O projeto faz parte de um curso em que toda a parte frontend e backend é desenvolvida. Aqui só se encontra a parte backend, onde foi modificada para utilizar TypeScript e outras tecnologias.",
       "O site foi um exercício para aprender mais sobre backend, GraphQL e TypeScript.“",
     ],
     techList: [
-      "NodeJs",
-      "Express",
-      "TypeScript",
-      "MongoDB",
-      "Mongoose",
-      "Typegoose GraphQL",
-      "Type-GraphQl",
+      TECHTYPES.NODEJS,
+      TECHTYPES.EXPRESS,
+      TECHTYPES.TYPESCRIPT,
+      TECHTYPES.MONGODB,
+      TECHTYPES.GRAPHQL,
     ],
     imgList: [
       {
@@ -173,15 +190,25 @@ export const projectsData: IProjectsInfo[] = [
   },
   {
     id: "twitter_clone",
-    date: "01/01/2021",
+    date: "06/02/2021",
     title: "Twitter Clone",
     desc: "Um site clone do Twitter feito com React e Firebase",
     stack: "Fullstack",
+    gitLink:
+      "https://github.com/LGPossatto/twitter-clone-with-react-and-firebase",
+    siteLink: "https://lg-twitter-clone.netlify.app",
     textList: [
       'Este site foi um dos meus primeiros projetos feitos utilizando React. O site é um clone do Twitter, onde o usuário pode criar posts, comentar e dar um "Like" tanto no post, quanto no comentário. O site também possui um "feed" onde os posts serão mostrados.',
       'Como esse foi um dos primeiros projetos criados por min, ele possui várias coisas que me desagradam, como, por exemplo, a não utilização de "tokens" para o processo de “login”, e a organização dos dados no Firebase.',
     ],
-    techList: ["HTML", "CSS", "Sass", "Javascript", "React", "Firebase"],
+    techList: [
+      TECHTYPES.HTML,
+      TECHTYPES.CSS,
+      TECHTYPES.SASS,
+      TECHTYPES.JAVASCRIPT,
+      TECHTYPES.REACT,
+      TECHTYPES.FIREBASE,
+    ],
     imgList: [
       {
         imgName: "",
@@ -202,16 +229,25 @@ export const projectsData: IProjectsInfo[] = [
   },
   {
     id: "news_site",
-    date: "01/02/2021",
+    date: "03/07/2021",
     title: "Site de Notícias",
     desc: "Um site de Notícias utilizando uma API externa",
     stack: "Frontend",
+    gitLink: "https://github.com/LGPossatto/news-site",
+    siteLink: "https://salaodenoticias.netlify.app",
     textList: [
       "Este projeto é um site de notícias inspirado no site da Jovem Pan e do G1. O site possui uma página inicial onde há varias sessões com notícias de diferentes tipos exibidas em vários grids. O site também Possui uma barra de busca e varias abas para as diferentes categorias.",
       "O projeto foi feito para um melhor entendimento do funcionamento do Redux, dos layouts de grid e de APIs externas",
       "*O site não mostra notícias dinâmicas, já que ele não está conectado a API por motivos de restrição a desenvolvedores impostas pela própria API.",
     ],
-    techList: ["HTML", "CSS", "Sass", "Javascript", "React", "Redux"],
+    techList: [
+      TECHTYPES.HTML,
+      TECHTYPES.CSS,
+      TECHTYPES.SASS,
+      TECHTYPES.JAVASCRIPT,
+      TECHTYPES.REACT,
+      TECHTYPES.REDUX,
+    ],
     imgList: [
       {
         imgName: "",
@@ -229,127 +265,5 @@ export const projectsData: IProjectsInfo[] = [
         desc: "Busque notícias mais específicas através da barra de pesquisa.",
       },
     ],
-  },
-];
-
-export const projectsRest: IProjectsRest[] = [
-  {
-    title: "test 1",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["HTML", "CSS", "Sass", "Javascript", "React", "Firebase"],
-  },
-  {
-    title: "test 2",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["HTML", "Sass", "Javascript", "React", "Firebase"],
-  },
-  {
-    title: "test 3",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["HTML", "CSS", "Javascript", "React", "Firebase"],
-  },
-  {
-    title: "test 4",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["HTML", "CSS", "Sass", "React", "Firebase"],
-  },
-  {
-    title: "test 5",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["HTML", "CSS", "Sass", "Javascript", "Firebase"],
-  },
-  {
-    title: "test 6",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["HTML", "CSS", "Sass", "Javascript", "React"],
-  },
-  {
-    title: "test 7",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["HTML"],
-  },
-  {
-    title: "test 8",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["CSS"],
-  },
-  {
-    title: "test 9",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["Sass"],
-  },
-  {
-    title: "test 10",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["Javascript"],
-  },
-  {
-    title: "test 11",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["React"],
-  },
-  {
-    title: "test 12",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["Firebase"],
-  },
-  {
-    title: "test 13",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["HTML", "Sass", "React"],
-  },
-  {
-    title: "test 14",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["CSS", "Javascript", "Firebase"],
-  },
-  {
-    title: "test 15",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["Javascript", "React", "Firebase"],
-  },
-  {
-    title: "test 16",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: ["HTML", "CSS", "Sass"],
-  },
-  {
-    title: "test 17",
-    desc: "test 12",
-    data: "12/12/1987",
-    gitLink: "https://github.com/LGPossatto",
-    techList: [],
   },
 ];

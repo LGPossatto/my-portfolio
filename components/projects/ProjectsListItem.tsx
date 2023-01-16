@@ -13,7 +13,7 @@ export const ProjectsListItem = ({ title, desc, date, href }: props) => {
     <a href={href} target="_blank" className={styles.container}>
       <h3>{title}</h3>
       <p>{desc}</p>
-      <DateBlock date={date}></DateBlock>
+      <DateBlock date={new Date(date)}></DateBlock>
     </a>
   );
 };

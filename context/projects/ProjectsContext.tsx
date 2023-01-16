@@ -3,12 +3,13 @@ import { createContext, FC, useReducer } from "react";
 import { projectsTypes } from "./projectsTypes";
 import { ProjectsReducer } from "./ProjectsReducer";
 
-import { IFav, IProjectsInfo, IProjectsRest } from "../../data/projects";
+import { IFav, IProjectsData } from "../../data/projectsData";
+import { IProjectsItems } from "../../data/projectsItems";
 
 export interface IProjectsState {
-  projectsRest: IProjectsRest[];
+  projectsRest: IProjectsItems[];
   projectsFav: IFav[];
-  projectsInfo: { [x: string]: IProjectsInfo };
+  projectsInfo: { [x: string]: IProjectsData };
 }
 
 interface IProjectsContext extends IProjectsState {

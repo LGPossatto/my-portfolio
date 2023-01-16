@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import { ProjectsContext } from "../../../context/projects/ProjectsContext";
 
-import { IProjectsInfo, projectsData } from "../../../data/projects";
+import { IProjectsData, projectsData } from "../../../data/projectsData";
 
 import styles from "../../../styles/pages/Projects.module.scss";
 import { Line } from "../../../components/misc/Line";
@@ -17,7 +17,7 @@ import { LoadingGrid } from "../../../components/misc/LoadingGrid";
 
 export default function Projects() {
   const { projectsInfo, getProjectById } = useContext(ProjectsContext);
-  const [project, setProject] = useState<IProjectsInfo | undefined>(undefined);
+  const [project, setProject] = useState<IProjectsData | undefined>(undefined);
   const router = useRouter();
   const { pid } = router.query;
 

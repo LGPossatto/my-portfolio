@@ -20,8 +20,8 @@ export const LoadingGrid = ({ flip = "0" }: props) => {
       className={styles.container}
       style={{ transform: `rotate(${flip}deg)` }}
     >
-      {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(() => (
-        <span style={{ backgroundColor: color }}></span>
+      {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+        <span key={item} style={{ backgroundColor: color }}></span>
       ))}
     </span>
   );

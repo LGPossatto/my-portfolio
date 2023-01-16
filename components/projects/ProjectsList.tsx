@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 
-import { IProjectsRest } from "../../data/projects";
+import { IProjectsItems } from "../../data/projectsItems";
 
 import { FilterContext } from "../../context/filter/FilterContext";
 import { ProjectsContext } from "../../context/projects/ProjectsContext";
@@ -22,7 +22,7 @@ export const ProjectsList = () => {
   const { projectsRest } = useContext(ProjectsContext);
   const { tags, tagsNum } = useContext(FilterContext);
   const [pageNumber, setPageNumber] = useState(0);
-  const [projectsList, setProjectsList] = useState<IProjectsRest[]>([]);
+  const [projectsList, setProjectsList] = useState<IProjectsItems[]>([]);
 
   useEffect(() => {
     setPageNumber(0);
@@ -48,19 +48,18 @@ export const ProjectsList = () => {
   };
 
   const getProjectsInRange = (
-    projects: IProjectsRest[],
+    projects: IProjectsItems[],
     start: number,
     end: number
   ) => {
     const projectsItems = [];
-
     if (end >= projects.length) end = projects.length - 1;
 
     for (let i = start; i <= end; i++) {
       projectsItems.push(
         <ProjectsListItem
           key={i}
-          date={projects[i].data}
+          date={projects[i].date}
           desc={projects[i].desc}
           title={projects[i].title}
           href={projects[i].gitLink}

@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IProjectsInfo, projectsData } from "../../../../data/projects";
+import { IProjectsData, projectsData } from "../../../../data/projectsData";
 
 interface IData {
   status: string;
@@ -8,7 +8,7 @@ interface IData {
     type: string;
     message: string;
   } | null;
-  data: IProjectsInfo | null;
+  data: IProjectsData | null;
 }
 
 export default function handler(

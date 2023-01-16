@@ -5,7 +5,7 @@ import CheckIcon from "../../assets/icons/circle-check-solid.svg";
 import styles from "../../styles/components/misc/DateBlock.module.scss";
 
 interface props {
-  date?: string;
+  date?: Date;
 }
 
 export const DateBlock = ({ date }: props) => {
@@ -20,10 +20,9 @@ export const DateBlock = ({ date }: props) => {
     );
   };
 
-  const getIcon = (date: string) => {
+  const getIcon = (date: Date) => {
     const diffDays = Math.floor(
-      (dateToUTC(new Date()) - dateToUTC(new Date(date))) /
-        (24 * 60 * 60 * 1000)
+      (dateToUTC(new Date()) - dateToUTC(date)) / 86400000
     );
 
     // ignoring leap years
@@ -40,7 +39,7 @@ export const DateBlock = ({ date }: props) => {
     <span className={styles.container}>
       <p>
         {getIcon(date!)}
-        {date ? date : "??/??/????"}
+        {date ? date.toLocaleDateString() : "??/??/????"}
       </p>
       <div className={styles.tooltip}>
         <div>

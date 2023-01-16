@@ -9,6 +9,7 @@
   grid-template-columns: 6fr 1fr;
   gap: 8px;
 
+  height: 78px;
   padding: 12px 0;
   border-bottom: 4px solid $color-black;
 
@@ -24,7 +25,7 @@
   p {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    height: fit-content;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
   }
@@ -38,6 +39,7 @@
   h3 {
     font-size: $fs-med;
     font-weight: 700;
+    -webkit-line-clamp: 1;
   }
 
   p {
@@ -45,6 +47,7 @@
     grid-row: 2;
 
     text-align: justify;
+    -webkit-line-clamp: 2;
   }
 
   span {

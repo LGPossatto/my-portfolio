@@ -1,6 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { IFav, projectsData, projectsFav } from "../../../../data/projects";
+import {
+  IFav,
+  projectsData,
+  projectsFavIdList,
+} from "../../../../data/projectsData";
 
 interface IData {
   status: string;
@@ -17,11 +21,11 @@ export default function handler(
 ) {
   try {
     const fav: IFav[] = [];
-    for (let i = 0; i < projectsFav.length; i++) {
+    for (let i = 0; i < projectsFavIdList.length; i++) {
       let filteredProject;
 
       for (let j = 0; j < projectsData.length; j++) {
-        if (projectsData[j].id === projectsFav[i]) {
+        if (projectsData[j].id === projectsFavIdList[i]) {
           filteredProject = {
             id: projectsData[j].id,
             title: projectsData[j].title,
