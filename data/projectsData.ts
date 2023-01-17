@@ -94,19 +94,118 @@ export const projectsData: IProjectsData[] = [
     ],
     imgList: [
       {
+        imgName: "untitled-camp_01",
+        title: "Página inicial",
+        desc: '"Topo da página inicial, contém uma barra de navegação simples e um "header" com um botão "cta".',
+      },
+      {
+        imgName: "untitled-camp_02",
+        title: "Página inicial",
+        desc: "Cartões especiais para equipamentos e promoções.",
+      },
+      {
+        imgName: "untitled-camp_03",
+        title: "Página inicial",
+        desc: 'Cartões para as diferentes categorias da sessão de "shopping".',
+      },
+      {
+        imgName: "untitled-camp_04",
+        title: "Página inicial",
+        desc: "Carrossel mostrando alguns produtos em promoção.",
+      },
+      {
+        imgName: "untitled-camp_05",
+        title: "Página inicial",
+        desc: 'Últimas sessões da página inicial, mostrando tanto uma sessão "About us" e o "footer" do site.',
+      },
+      {
+        imgName: "untitled-camp_06",
+        title: 'Página "shop"',
+        desc: "Página contendo produtos e opções de busca.",
+      },
+      {
+        imgName: "untitled-camp_07",
+        title: 'Página "shop"',
+        desc: 'Página "shop" contendo somente produtos que batem com as opções de busca.',
+      },
+      {
+        imgName: "untitled-camp_08",
+        title: "Página do produto",
+        desc: "Página contendo os detalhes do produto e opções de compra.",
+      },
+      {
+        imgName: "untitled-camp_09",
+        title: "Página do produto",
+        desc: "Mais informações sobre o produto.",
+      },
+      {
+        imgName: "untitled-camp_10",
+        title: "Página do produto",
+        desc: "Seção oferecendo mais produtos com base nas compras passadas e produtos recentemente procurados.",
+      },
+      {
+        imgName: "untitled-camp_11",
+        title: 'Página "About us"',
+        desc: "Página contendo informações sobre o site e a empresa.",
+      },
+      {
+        imgName: "untitled-camp_12",
+        title: 'Página de "sign up"',
+        desc: "Nessa página é possível se conectar a uma conta pessoal.",
+      },
+      {
+        imgName: "untitled-camp_13",
+        title: 'Página "cart"',
+        desc: '"Cart" contendo produtos adicionados pelo usuário.',
+      },
+      {
+        imgName: "untitled-camp_14",
+        title: "Mobile",
+        desc: "O site é completamente responsivo, se adaptando a diferentes tamanhos de tela.",
+      },
+      {
+        imgName: "untitled-camp_15",
+        title: "Mobile",
+        desc: "Mais exemplos da versão de tela menores.",
+      },
+    ],
+  },
+  {
+    id: "twitter_clone",
+    date: "06/02/2021",
+    title: "Twitter Clone",
+    desc: "Um site clone do Twitter feito com React e Firebase",
+    stack: "Fullstack",
+    gitLink:
+      "https://github.com/LGPossatto/twitter-clone-with-react-and-firebase",
+    siteLink: "https://lg-twitter-clone.netlify.app",
+    textList: [
+      'Este site foi um dos meus primeiros projetos feitos utilizando React. O site é um clone do Twitter, onde o usuário pode criar posts, comentar e dar um "Like" tanto no post, quanto no comentário. O site também possui um "feed" onde os posts serão mostrados.',
+      'Como esse foi um dos primeiros projetos criados por min, ele possui várias coisas que me desagradam, como, por exemplo, a não utilização de "tokens" para o processo de “login”, e a organização dos dados no Firebase.',
+    ],
+    techList: [
+      TECHTYPES.HTML,
+      TECHTYPES.CSS,
+      TECHTYPES.SASS,
+      TECHTYPES.JAVASCRIPT,
+      TECHTYPES.REACT,
+      TECHTYPES.FIREBASE,
+    ],
+    imgList: [
+      {
         imgName: "",
         title: "Mobile",
         desc: "Design responsivo dependendo da largura da tela do dispositivo.",
       },
       {
         imgName: "",
-        title: "Shop",
-        desc: "Página para procurar produtos.",
+        title: "Sua Conta",
+        desc: "Crie uma conta e comece a postar na sua linha do tempo. Interaja com outras contas através de likes e comentários.",
       },
       {
         imgName: "",
-        title: "Cards",
-        desc: "Cards promocionais e especiais.",
+        title: "Explore",
+        desc: "Siga outras contas para ver suas publicações e interagir com elas.",
       },
     ],
   },
@@ -185,45 +284,6 @@ export const projectsData: IProjectsData[] = [
         imgName: "",
         title: "Crie Eventos",
         desc: "Crie eventos, salve e exclua como desejar.",
-      },
-    ],
-  },
-  {
-    id: "twitter_clone",
-    date: "06/02/2021",
-    title: "Twitter Clone",
-    desc: "Um site clone do Twitter feito com React e Firebase",
-    stack: "Fullstack",
-    gitLink:
-      "https://github.com/LGPossatto/twitter-clone-with-react-and-firebase",
-    siteLink: "https://lg-twitter-clone.netlify.app",
-    textList: [
-      'Este site foi um dos meus primeiros projetos feitos utilizando React. O site é um clone do Twitter, onde o usuário pode criar posts, comentar e dar um "Like" tanto no post, quanto no comentário. O site também possui um "feed" onde os posts serão mostrados.',
-      'Como esse foi um dos primeiros projetos criados por min, ele possui várias coisas que me desagradam, como, por exemplo, a não utilização de "tokens" para o processo de “login”, e a organização dos dados no Firebase.',
-    ],
-    techList: [
-      TECHTYPES.HTML,
-      TECHTYPES.CSS,
-      TECHTYPES.SASS,
-      TECHTYPES.JAVASCRIPT,
-      TECHTYPES.REACT,
-      TECHTYPES.FIREBASE,
-    ],
-    imgList: [
-      {
-        imgName: "",
-        title: "Mobile",
-        desc: "Design responsivo dependendo da largura da tela do dispositivo.",
-      },
-      {
-        imgName: "",
-        title: "Sua Conta",
-        desc: "Crie uma conta e comece a postar na sua linha do tempo. Interaja com outras contas através de likes e comentários.",
-      },
-      {
-        imgName: "",
-        title: "Explore",
-        desc: "Siga outras contas para ver suas publicações e interagir com elas.",
       },
     ],
   },

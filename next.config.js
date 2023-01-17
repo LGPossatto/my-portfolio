@@ -11,6 +11,12 @@ const nextConfig = {
 
     return config;
   },
+  env: {
+    siteUrl: "http://localhost:3000/",
+  },
+  images: {
+    domains: ["localhost", "lgpossatto.netlify.app"],
+  },
 };
 
 module.exports = nextConfig;

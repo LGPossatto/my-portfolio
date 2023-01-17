@@ -3,7 +3,7 @@
 
 .container {
   .flex-container {
-    overflow: hidden;
+    //overflow: hidden;
 
     display: flex;
     align-items: center;
@@ -27,6 +27,22 @@
     p {
       font-size: $fs-med;
       font-weight: 500;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+
+      width: 100%;
+      margin: 24px 0;
+
+      button {
+        margin: 0;
+
+        &:first-child {
+          margin-right: 24px;
+        }
+      }
     }
   }
 
@@ -54,10 +70,25 @@
 
     .title {
       margin-top: 24px;
+
+      > div {
+        justify-content: center;
+      }
     }
 
     .img-box {
       max-height: 300px;
+    }
+  }
+
+  @include bp-mobile {
+    .title > div {
+      flex-direction: column;
+
+      & button:first-child {
+        margin-right: 0;
+        margin-bottom: 24px;
+      }
     }
   }
 }

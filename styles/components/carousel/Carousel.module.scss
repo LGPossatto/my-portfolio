@@ -16,13 +16,17 @@
 
     .image {
       cursor: pointer;
+      position: relative;
 
       display: inline-block;
 
       width: 20%;
+      padding-bottom: 11%;
       margin-right: 6.7%;
 
       transition: transform 0.2s;
+
+      border: 1px solid $color-black;
 
       &:hover {
         opacity: 0.9;
@@ -34,6 +38,7 @@
 
       @include bp-mobile {
         width: 45%;
+        padding-bottom: 25%;
         margin-right: 10%;
       }
 

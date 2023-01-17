@@ -11,7 +11,7 @@ import { ArrowBtn } from "../buttons/ArrowBtn";
 interface props {
   activeIndex: number;
   setActiveIndex: Dispatch<SetStateAction<number>>;
-  imgList: StaticImageData[];
+  imgList: string[];
 }
 
 export const Carousel = ({ activeIndex, setActiveIndex, imgList }: props) => {
@@ -57,7 +57,7 @@ export const Carousel = ({ activeIndex, setActiveIndex, imgList }: props) => {
         className={styles.top}
         style={{ transform: `translateX(calc(-${stepSize}% * ${imgIndex}))` }}
       >
-        {imgList.map((img, i) => (
+        {imgList.map((imgName, i) => (
           <div
             className={`${styles.image} ${
               i === activeIndex ? styles.active : ""
@@ -65,7 +65,11 @@ export const Carousel = ({ activeIndex, setActiveIndex, imgList }: props) => {
             key={i}
             onClick={() => setActiveIndex(i)}
           >
-            <Image src={img} alt="Project Image" />
+            <Image
+              src={`${process.env.siteUrl}assets/images/${imgName}.jpg`}
+              alt="Project Image"
+              fill
+            />
           </div>
         ))}
       </div>

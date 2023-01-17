@@ -107,8 +107,17 @@
     display: block;
 
     .text {
+      height: 160px;
       margin: 24px 0 12px;
+
       text-align: center;
+
+      p {
+        overflow: hidden;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        height: calc(100% - 16px - 2.8rem);
+      }
     }
   }
 }

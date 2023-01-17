@@ -40,19 +40,19 @@ export default function Projects() {
       <section className={styles.project}>
         <div className={styles["page-top"]}>
           <div className={styles["top-left"]}>
-            {projectsInfo[pid as string] ? (
+            {project ? (
               <>
-                <h1>{project?.title}</h1>
+                <h1>{project.title}</h1>
                 <div className={styles.info}>
                   <span>
-                    <strong>Tecnologias:</strong> {project?.techList.join(", ")}
+                    <strong>Tecnologias:</strong> {project.techList.join(", ")}
                   </span>
                   <span>
-                    <strong>Stack:</strong> {project?.stack}
+                    <strong>Stack:</strong> {project.stack}
                   </span>
                   <span>
                     <strong>Data:</strong>{" "}
-                    <DateBlock date={project?.date}></DateBlock>
+                    <DateBlock date={new Date(project.date)}></DateBlock>
                   </span>
                 </div>
                 <div className={styles.desc}>
@@ -84,8 +84,8 @@ export default function Projects() {
           </div>
         </div>
         <div className="">
-          {projectsInfo[pid as string] ? (
-            <ImgCarousel></ImgCarousel>
+          {project ? (
+            <ImgCarousel project={project}></ImgCarousel>
           ) : (
             <LoadingGrid flip="270"></LoadingGrid>
           )}

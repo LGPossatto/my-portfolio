@@ -1,25 +1,30 @@
 import { useEffect, useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 import styles from "../../styles/components/carousel/ImgDisplay.module.scss";
 
 interface props {
   activeIndex: number;
-  imgObjects: { img: StaticImageData; title: string; desc: string }[];
+  imgObjects: { imgName: string; title: string; desc: string }[];
 }
 
 export const ImgDisplay = ({ activeIndex, imgObjects }: props) => {
   const [flipDeg, setFlipDeg] = useState(0);
   const [isFrontUp, setIsFrontUp] = useState(true);
-  const [imgFront, setImgFront] = useState(imgObjects[activeIndex].img);
-  const [imgBack, setImgBack] = useState(imgObjects[activeIndex].img);
+  const [imgFront, setImgFront] = useState(imgObjects[activeIndex].imgName);
+  const [imgBack, setImgBack] = useState(imgObjects[activeIndex].imgName);
+
+  console.log(
+    `${process.env.siteUrl}assets/images/${imgFront}.jpg`,
+    `${process.env.siteUrl}assets/images/${imgBack}.jpg`
+  );
 
   const onIndexChange = () => {
     if (isFrontUp) {
-      setImgBack(imgObjects[activeIndex].img);
+      setImgBack(imgObjects[activeIndex].imgName);
       setIsFrontUp(false);
     } else {
-      setImgFront(imgObjects[activeIndex].img);
+      setImgFront(imgObjects[activeIndex].imgName);
       setIsFrontUp(true);
     }
 
@@ -39,10 +44,18 @@ export const ImgDisplay = ({ activeIndex, imgObjects }: props) => {
             style={{ transform: `rotateY(${flipDeg}deg)` }}
           >
             <span className={styles["card-front"]}>
-              <Image src={imgFront} alt="img1" />
+              <Image
+                src={`${process.env.siteUrl}assets/images/${imgFront}.jpg`}
+                alt="imagem"
+                fill
+              />
             </span>
             <span className={styles["card-back"]}>
-              <Image src={imgBack} alt="img2" />
+              <Image
+                src={`${process.env.siteUrl}assets/images/${imgBack}.jpg`}
+                alt="imagem"
+                fill
+              />
             </span>
           </div>
         </div>
