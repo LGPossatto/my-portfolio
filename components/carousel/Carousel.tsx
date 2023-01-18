@@ -33,11 +33,7 @@ export const Carousel = ({ activeIndex, setActiveIndex, imgList }: props) => {
     }
   };
 
-  useEffect(() => {
-    setColor(Colors.getRandomColor());
-  }, []);
-
-  useEffect(() => {
+  const getEndIndex = () => {
     if (width <= 480) {
       setStepSize(55);
       setListEndIndex(imgList.length - 2);
@@ -48,7 +44,24 @@ export const Carousel = ({ activeIndex, setActiveIndex, imgList }: props) => {
       if (imgIndex >= listEndIndex) {
         setImgIndex(listEndIndex);
       }
+
+      if (listEndIndex < 0) {
+        setListEndIndex(0);
+      }
     }
+  };
+
+  useEffect(() => {
+    setColor(Colors.getRandomColor());
+  }, []);
+
+  useEffect(() => {
+    setImgIndex(0);
+    getEndIndex();
+  }, [imgList]);
+
+  useEffect(() => {
+    getEndIndex();
   }, [width]);
 
   return (

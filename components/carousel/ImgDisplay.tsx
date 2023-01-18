@@ -11,13 +11,8 @@ interface props {
 export const ImgDisplay = ({ activeIndex, imgObjects }: props) => {
   const [flipDeg, setFlipDeg] = useState(0);
   const [isFrontUp, setIsFrontUp] = useState(true);
-  const [imgFront, setImgFront] = useState(imgObjects[activeIndex].imgName);
-  const [imgBack, setImgBack] = useState(imgObjects[activeIndex].imgName);
-
-  console.log(
-    `${process.env.siteUrl}assets/images/${imgFront}.jpg`,
-    `${process.env.siteUrl}assets/images/${imgBack}.jpg`
-  );
+  const [imgFront, setImgFront] = useState(imgObjects[0].imgName);
+  const [imgBack, setImgBack] = useState(imgObjects[0].imgName);
 
   const onIndexChange = () => {
     if (isFrontUp) {
@@ -34,6 +29,11 @@ export const ImgDisplay = ({ activeIndex, imgObjects }: props) => {
   useEffect(() => {
     onIndexChange();
   }, [activeIndex]);
+
+  useEffect(() => {
+    setImgFront(imgObjects[0].imgName);
+    setImgBack(imgObjects[0].imgName);
+  }, [imgObjects]);
 
   return (
     <div className={styles.container}>

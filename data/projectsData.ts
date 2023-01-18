@@ -52,19 +52,19 @@ export const projectsData: IProjectsData[] = [
     ],
     imgList: [
       {
-        imgName: "",
+        imgName: "my-portfolio_01",
+        title: "Meu Portfólio",
+        desc: "Visite todas as páginas e sessões desejadas, entre em contato a partir da sessão contato.",
+      },
+      {
+        imgName: "my-portfolio_02",
         title: "Mobile",
-        desc: "Design responsivo dependendo da largura da tela do dispositivo.",
+        desc: "O site é completamente responsivo, se adaptando a diferentes tamanhos de tela.",
       },
       {
-        imgName: "",
-        title: "Projetos",
-        desc: "Seção para apresentação dos projetos.",
-      },
-      {
-        imgName: "",
-        title: "Sobre os Projetos",
-        desc: "Página para ver mais detalhes sobre cada projeto.",
+        imgName: "my-portfolio_03",
+        title: "Mobile",
+        desc: "Mais exemplos da versão de tela menores.",
       },
     ],
   },
@@ -193,19 +193,44 @@ export const projectsData: IProjectsData[] = [
     ],
     imgList: [
       {
-        imgName: "",
+        imgName: "twitter-clone_01",
+        title: "Página inicial",
+        desc: 'A página inicial contém sessões de informação sobre o site e o usuário e o "feed".',
+      },
+      {
+        imgName: "twitter-clone_02",
+        title: '"Feed"',
+        desc: 'O "feed" mostra as postagens das contas seguidas do usuário, podendo deixar um "like" ou acessar os comentários.',
+      },
+      {
+        imgName: "twitter-clone_03",
+        title: '"Followers',
+        desc: "Módulo mostrando os seguidores do usuário.",
+      },
+      {
+        imgName: "twitter-clone_04",
+        title: '"Following"',
+        desc: "Módulo mostrando as contas seguidas pelo usuário.",
+      },
+      {
+        imgName: "twitter-clone_05",
+        title: '"Explore"',
+        desc: "Módulo mostrando contas registradas no sistema.",
+      },
+      {
+        imgName: "twitter-clone_06",
+        title: '"Explore"',
+        desc: 'Busque por emails no módulo "explore".',
+      },
+      {
+        imgName: "twitter-clone_07",
+        title: '"Coments"',
+        desc: 'Módulo mostrando os comentários de um determinado "post", onde se é possível deixar um comentário ou um "like".',
+      },
+      {
+        imgName: "twitter-clone_08",
         title: "Mobile",
-        desc: "Design responsivo dependendo da largura da tela do dispositivo.",
-      },
-      {
-        imgName: "",
-        title: "Sua Conta",
-        desc: "Crie uma conta e comece a postar na sua linha do tempo. Interaja com outras contas através de likes e comentários.",
-      },
-      {
-        imgName: "",
-        title: "Explore",
-        desc: "Siga outras contas para ver suas publicações e interagir com elas.",
+        desc: "O site é completamente responsivo, se adaptando a diferentes tamanhos de tela.",
       },
     ],
   },
@@ -231,19 +256,59 @@ export const projectsData: IProjectsData[] = [
     ],
     imgList: [
       {
-        imgName: "",
+        imgName: "e-comerce-clay_01",
+        title: "Página inicial",
+        desc: '"Topo da página inicial, contém uma barra de navegação e um "header" com um botão "cta".',
+      },
+      {
+        imgName: "e-comerce-clay_02",
+        title: "Página inicial",
+        desc: "Cartões especiais para roupas e promoções.",
+      },
+      {
+        imgName: "e-comerce-clay_03",
+        title: "Página inicial",
+        desc: 'Últimas sessões da página inicial, mostrando parte de cartões e o "footer" do site.',
+      },
+      {
+        imgName: "e-comerce-clay_04",
+        title: 'Página "shop"',
+        desc: 'Topo da página "shop" contendo a barra de navegação, algumas opções de filtro de itens e os cartões de cada produto.',
+      },
+      {
+        imgName: "e-comerce-clay_05",
+        title: "Página do produto",
+        desc: "Sessão mostrando opções sobre o produto para a compra.",
+      },
+      {
+        imgName: "e-comerce-clay_06",
+        title: "Carrinho",
+        desc: "Checagem final dos produtos.",
+      },
+      {
+        imgName: "e-comerce-clay_07",
+        title: "Carrinho",
+        desc: "Opções de pagamento.",
+      },
+      {
+        imgName: "e-comerce-clay_08",
+        title: "Carrinho",
+        desc: "Informações para entrega.",
+      },
+      {
+        imgName: "e-comerce-clay_09",
+        title: "Carrinho",
+        desc: "Tela de sucesso.",
+      },
+      {
+        imgName: "e-comerce-clay_10",
         title: "Mobile",
-        desc: "Design responsivo dependendo da largura da tela do dispositivo.",
+        desc: "O site é completamente responsivo, se adaptando a diferentes tamanhos de tela.",
       },
       {
-        imgName: "",
-        title: "Shop",
-        desc: "Página para procurar produtos.",
-      },
-      {
-        imgName: "",
-        title: "Produto",
-        desc: "Mais detalhes sobre o produto escolhido.",
+        imgName: "e-comerce-clay_11",
+        title: "Mobile",
+        desc: "Mais exemplos da versão de tela menores.",
       },
     ],
   },
@@ -271,19 +336,19 @@ export const projectsData: IProjectsData[] = [
     ],
     imgList: [
       {
-        imgName: "",
-        title: "Query Events",
-        desc: "Busque por eventos, e receba de volta só aquilo que foi pedido.",
+        imgName: "graphql-server_01",
+        title: "Schemas",
+        desc: 'Lista de "schemas" do site.',
       },
       {
-        imgName: "",
+        imgName: "graphql-server_02",
+        title: "Documentação",
+        desc: "Documentos oferecidos pelo graphql, ajudando na documentação e entendimento da informação.",
+      },
+      {
+        imgName: "graphql-server_03",
         title: "Contas de Usuário",
-        desc: "Crie contas de usuários e faça login através de JSON Web Tokens.",
-      },
-      {
-        imgName: "",
-        title: "Crie Eventos",
-        desc: "Crie eventos, salve e exclua como desejar.",
+        desc: "Exemplo de criação de conta de usuário e obtenção de informações desejadas.",
       },
     ],
   },
@@ -310,19 +375,39 @@ export const projectsData: IProjectsData[] = [
     ],
     imgList: [
       {
-        imgName: "",
+        imgName: "news-site_01",
+        title: "Página inicial",
+        desc: "Topo da página inicial, contém uma barra de navegação e as principais notícias do dia.",
+      },
+      {
+        imgName: "news-site_02",
+        title: "Página inicial",
+        desc: "Sessão contendo as notícias mais atualizadas.",
+      },
+      {
+        imgName: "news-site_03",
+        title: "Página inicial",
+        desc: "Sessão contendo notícias por categoria.",
+      },
+      {
+        imgName: "news-site_04",
+        title: "Página inicial",
+        desc: '"Footer" da página inicial.',
+      },
+      {
+        imgName: "news-site_05",
+        title: "Categorias",
+        desc: "Página contendo notícias dependendo da categoria selecionada.",
+      },
+      {
+        imgName: "news-site_06",
+        title: "Categorias",
+        desc: "Página contendo notícias dependendo da categoria selecionada e ditado pelo termo de busca.",
+      },
+      {
+        imgName: "news-site_07",
         title: "Mobile",
-        desc: "Design responsivo dependendo da largura da tela do dispositivo.",
-      },
-      {
-        imgName: "",
-        title: "Diferentes Categorias",
-        desc: "Navegue e busque por diferentes notícias.",
-      },
-      {
-        imgName: "",
-        title: "Pesquise Por Mais",
-        desc: "Busque notícias mais específicas através da barra de pesquisa.",
+        desc: "O site é completamente responsivo, se adaptando a diferentes tamanhos de tela.",
       },
     ],
   },
