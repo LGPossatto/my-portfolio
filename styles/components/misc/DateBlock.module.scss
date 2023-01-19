@@ -16,7 +16,10 @@
   &:hover {
     .tooltip {
       display: block;
-      animation: hoverOpacity 0.2s forwards 0.3s;
+      animation-name: hoverOpacity;
+      animation-duration: 0.2s;
+      animation-delay: 0.3s;
+      animation-fill-mode: forwards;
     }
   }
 

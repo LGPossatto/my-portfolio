@@ -77,10 +77,9 @@ export const ProjectsList = () => {
       <CollapsingBox title="Informação">
         <div className={styles.info}>
           <p>
-            A aba "tudo" mostra alguns projetos feitos por mim, e, também,
-            projetos feitos em cursos. Praticamente todos os projetos aqui foram
-            feitos para aprender ou se familiarizar com alguma tecnologia ou
-            conceito.
+            {
+              'A aba "tudo" mostra alguns projetos feitos por mim, e, também, projetos feitos em cursos. Praticamente todos os projetos aqui foram feitos para aprender ou se familiarizar com alguma tecnologia ou conceito.'
+            }
           </p>
           <div>
             <p>Projetos marcados com: </p>

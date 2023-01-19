@@ -31,13 +31,18 @@ export const Footer = () => {
             <a
               href="https://docs.google.com/document/d/1WtM29685RdqS0biA5UFWBZIkHNy6VsNVgz6DX8WUU_E/edit?usp=sharing"
               target="_blank"
+              rel="noreferrer"
             >
               Link
             </a>
           </p>
           <p>
             <strong>GitHub:</strong>{" "}
-            <a href="https://github.com/LGPossatto" target="_blank">
+            <a
+              href="https://github.com/LGPossatto"
+              target="_blank"
+              rel="noreferrer"
+            >
               Link
             </a>
           </p>

@@ -10,7 +10,12 @@ interface props {
 
 export const ProjectsListItem = ({ title, desc, date, href }: props) => {
   return (
-    <a href={href} target="_blank" className={styles.container}>
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className={styles.container}
+    >
       <h3>{title}</h3>
       <p>{desc}</p>
       <DateBlock date={new Date(date)}></DateBlock>
