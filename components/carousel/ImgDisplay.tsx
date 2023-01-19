@@ -44,18 +44,10 @@ export const ImgDisplay = ({ activeIndex, imgObjects }: props) => {
             style={{ transform: `rotateY(${flipDeg}deg)` }}
           >
             <span className={styles["card-front"]}>
-              <Image
-                src={`${process.env.siteUrl}assets/images/${imgFront}.jpg`}
-                alt="imagem"
-                fill
-              />
+              <Image src={`/images/${imgFront}.jpg`} alt="imagem" fill />
             </span>
             <span className={styles["card-back"]}>
-              <Image
-                src={`${process.env.siteUrl}assets/images/${imgBack}.jpg`}
-                alt="imagem"
-                fill
-              />
+              <Image src={`/images/${imgBack}.jpg`} alt="imagem" fill />
             </span>
           </div>
         </div>

@@ -25,12 +25,17 @@
         margin-bottom: 12px;
         font-size: $fs-med;
       }
+
+      a {
+        cursor: pointer;
+        text-decoration: underline;
+      }
     }
 
     .qr {
-      width: 250px;
-      height: 250px;
-      background-color: red;
+      width: 240px;
+      height: 240px;
+      background-color: $color-white;
     }
 
     .thanks {

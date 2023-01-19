@@ -8,7 +8,7 @@ import { ProjectsContext } from "../../context/projects/ProjectsContext";
 import DangerIcon from "../../assets/icons/triangle-exclamation-solid.svg";
 import AttetionIcon from "../../assets/icons/circle-exclamation-solid.svg";
 import CheckIcon from "../../assets/icons/circle-check-solid.svg";
-import Frown from "../../public/assets/illustrations/frown.svg";
+import Frown from "../../assets/illustrations/frown.svg";
 
 import styles from "../../styles/components/projects/ProjectsList.module.scss";
 import { ProjectsListItem } from "./ProjectsListItem";

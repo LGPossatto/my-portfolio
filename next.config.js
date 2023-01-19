@@ -12,7 +12,7 @@ const nextConfig = {
     return config;
   },
   env: {
-    siteUrl: "http://localhost:3000/",
+    siteUrl: "https://luizgustavo.netlify.app/",
   },
   images: {
     domains: ["localhost", "lgpossatto.netlify.app"],

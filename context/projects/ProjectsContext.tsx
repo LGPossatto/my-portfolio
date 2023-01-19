@@ -47,31 +47,61 @@ export const ProjectsProvider: FC<props> = ({ children }) => {
   const getFavProjects = async () => {
     if (state.projectsFav.length > 0) return;
 
-    const res = await fetch(`${originUrl}/api/projects/fav`);
-    const data = await res.json();
+    const storage = sessionStorage.getItem("projectsFav");
+    if (storage) {
+      dispatch({
+        type: projectsTypes.GET_FAV_PROJECTS,
+        payload: JSON.parse(storage),
+      });
+    } else {
+      const res = await fetch(`${originUrl}/api/projects/fav`);
+      const data = await res.json();
 
-    if (data.status === "ok")
-      dispatch({ type: projectsTypes.GET_FAV_PROJECTS, payload: data.data });
+      if (data.status === "ok") {
+        dispatch({ type: projectsTypes.GET_FAV_PROJECTS, payload: data.data });
+        sessionStorage.setItem("projectsFav", JSON.stringify(data.data));
+      }
+    }
   };
 
   const getProjectById = async (id: string) => {
     if (state.projectsInfo[id]) return;
 
-    const res = await fetch(`${originUrl}/api/projects/${id}`);
-    const data = await res.json();
+    const storage = sessionStorage.getItem(id);
+    if (storage) {
+      dispatch({
+        type: projectsTypes.GET_PROJECT_BY_ID,
+        payload: JSON.parse(storage),
+      });
+    } else {
+      const res = await fetch(`${originUrl}/api/projects/${id}`);
+      const data = await res.json();
 
-    if (data.status === "ok")
-      dispatch({ type: projectsTypes.GET_PROJECT_BY_ID, payload: data.data });
+      if (data.status === "ok") {
+        dispatch({ type: projectsTypes.GET_PROJECT_BY_ID, payload: data.data });
+        sessionStorage.setItem(`${data.data.id}`, JSON.stringify(data.data));
+      }
+    }
   };
 
   const getRestProjects = async () => {
     if (state.projectsRest.length > 0) return;
 
-    const res = await fetch(`${originUrl}/api/projects/rest`);
-    const data = await res.json();
+    const storage = sessionStorage.getItem("projectsRest");
+    if (storage) {
+      dispatch({
+        type: projectsTypes.GET_REST_PROJECTS,
+        payload: JSON.parse(storage),
+      });
+    } else {
+      const res = await fetch(`${originUrl}/api/projects/rest`);
+      const data = await res.json();
 
-    if (data.status === "ok")
-      dispatch({ type: projectsTypes.GET_REST_PROJECTS, payload: data.data });
+      if (data.status === "ok") {
+        dispatch({ type: projectsTypes.GET_REST_PROJECTS, payload: data.data });
+        sessionStorage.setItem("projectsRest", JSON.stringify(data.data));
+      }
+    }
   };
 
   return (

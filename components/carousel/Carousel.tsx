@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 import useWindowDimensions from "../../custom-hooks/useWindowDimensions ";
 
@@ -36,17 +36,21 @@ export const Carousel = ({ activeIndex, setActiveIndex, imgList }: props) => {
   const getEndIndex = () => {
     if (width <= 480) {
       setStepSize(55);
-      setListEndIndex(imgList.length - 2);
+      if (imgList.length >= 2) {
+        setListEndIndex(imgList.length - 2);
+      } else {
+        setListEndIndex(0);
+      }
     } else {
       setStepSize(26.7);
-      setListEndIndex(imgList.length - 4);
+      if (imgList.length >= 4) {
+        setListEndIndex(imgList.length - 4);
+      } else {
+        setListEndIndex(0);
+      }
 
       if (imgIndex >= listEndIndex) {
         setImgIndex(listEndIndex);
-      }
-
-      if (listEndIndex < 0) {
-        setListEndIndex(0);
       }
     }
   };
@@ -78,11 +82,7 @@ export const Carousel = ({ activeIndex, setActiveIndex, imgList }: props) => {
             key={i}
             onClick={() => setActiveIndex(i)}
           >
-            <Image
-              src={`${process.env.siteUrl}assets/images/${imgName}.jpg`}
-              alt="Project Image"
-              fill
-            />
+            <Image src={`/images/${imgName}.jpg`} alt="Project Image" fill />
           </div>
         ))}
       </div>

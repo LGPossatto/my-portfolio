@@ -5,7 +5,7 @@ import { IFav } from "../../data/projectsData";
 import { ProjectsContext } from "../../context/projects/ProjectsContext";
 import { FilterContext } from "../../context/filter/FilterContext";
 
-import Frown from "../../public/assets/illustrations/frown.svg";
+import Frown from "../../assets/illustrations/frown.svg";
 
 import styles from "../../styles/components/projects/ProjectsFav.module.scss";
 import { ProjectsFavCard } from "./ProjectsFavCard";
