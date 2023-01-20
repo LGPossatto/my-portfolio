@@ -54,7 +54,7 @@ export const ProjectsFav = () => {
             id={project.id}
             title={project.title}
             desc={project.desc}
-            colorNum={i}
+            colorNum={projectsFav.indexOf(project)}
           ></ProjectsFavCard>
         ))
       ) : (
